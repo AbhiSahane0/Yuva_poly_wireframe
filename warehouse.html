@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>FactoryOS — Warehouse</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="warehouse" data-title="Warehouse" data-breadcrumb="Materials">
+<div class="app-shell">
+  <div class="sidebar">
+  <div class="sidebar-logo"><div class="mark"></div><div class="word">FactoryOS</div></div>
+  <div class="nav-scroll">
+    <div class="nav-list">
+      <a class="nav-item" href="dashboard.html"><span class="icon"></span>Overview</a>
+    </div>
+    <div><div class="nav-group-label">Operations</div><div class="nav-list">
+      <a class="nav-item" href="production.html"><span class="icon"></span>Orders</a>
+      <a class="nav-item" href="production.html"><span class="icon"></span>Production</a>
+      <a class="nav-item" href="production.html"><span class="icon"></span>Planning</a>
+      <a class="nav-item" href="dashboard.html"><span class="icon"></span>Ongoing Production</a>
+    </div></div>
+    <div><div class="nav-group-label">Materials</div><div class="nav-list">
+      <a class="nav-item" href="inventory.html"><span class="icon"></span>Inventory</a>
+      <a class="nav-item active" href="warehouse.html"><span class="icon"></span>Warehouse</a>
+    </div></div>
+    <div><div class="nav-group-label">Control</div><div class="nav-list">
+      <a class="nav-item" href="quality-waste.html"><span class="icon"></span>Quality & Waste</a>
+    </div></div>
+    <div><div class="nav-group-label">Resources</div><div class="nav-list">
+      <a class="nav-item" href="machines.html"><span class="icon"></span>Machines</a>
+      <a class="nav-item" href="employees.html"><span class="icon"></span>Employees</a>
+      <a class="nav-item" href="machines.html"><span class="icon"></span>Maintenance</a>
+    </div></div>
+    <div><div class="nav-group-label">Insights</div><div class="nav-list">
+      <a class="nav-item" href="reports.html"><span class="icon"></span>Reports</a>
+      <a class="nav-item" href="ai-assistant.html"><span class="icon"></span>AI Assistant</a>
+    </div></div>
+  </div>
+  <div class="sidebar-footer"><a class="nav-item" href="#"><span class="icon"></span>Settings</a></div>
+</div>
+  <div class="main">
+    <div class="header">
+  <div class="header-titles">
+    <div class="header-breadcrumb">Materials</div>
+    <div class="header-title">Warehouse</div>
+  </div>
+  <div class="header-search"><span class="icon"></span>Ask about your factory...</div>
+  <div class="header-right">
+    <div class="header-icon-btn">⌕</div>
+    <div class="header-icon-btn">🔔<span class="dot"></span></div>
+    <div class="header-avatar">AD</div>
+  </div>
+</div>
+    <div class="content">
+
+      <div class="content-header">
+        <div class="content-heading">
+          <h1>Warehouse</h1>
+          <p>Warehouse A · Live view of storage zones and locations.</p>
+        </div>
+        <div class="btn-row">
+          <button class="btn btn-secondary">Scan Roll</button>
+          <button class="btn btn-secondary">Transfer</button>
+          <button class="btn btn-secondary">Issue Material</button>
+          <button class="btn btn-primary">Receive Material</button>
+        </div>
+      </div>
+
+      <div class="col" style="gap:16px;">
+        <div class="card-title">Raw Material Storage</div>
+        <div class="grid-4">
+          <div class="location-card"><div class="loc-code">A-01</div><div class="loc-name">PET Rolls</div><div class="loc-count">12 Rolls</div></div>
+          <div class="location-card"><div class="loc-code">A-02</div><div class="loc-name">PE Rolls</div><div class="loc-count">9 Rolls</div></div>
+          <div class="location-card"><div class="loc-code">A-03</div><div class="loc-name">BOPP Rolls</div><div class="loc-count">6 Rolls</div></div>
+          <div class="location-card"><div class="loc-code">A-04</div><div class="loc-name">Foil Rolls</div><div class="loc-count">4 Rolls</div></div>
+        </div>
+      </div>
+
+      <div class="col" style="gap:16px;">
+        <div class="card-title">Ink &amp; Chemical Storage</div>
+        <div class="grid-4">
+          <div class="location-card"><div class="loc-code">B-01</div><div class="loc-name">Ink</div><div class="loc-count">18 Batches</div></div>
+          <div class="location-card"><div class="loc-code">B-02</div><div class="loc-name">Adhesive</div><div class="loc-count">7 Batches</div></div>
+          <div class="location-card"><div class="loc-code">B-03</div><div class="loc-name">Solvents</div><div class="loc-count">10 Batches</div></div>
+        </div>
+      </div>
+
+      <div class="col" style="gap:16px;">
+        <div class="card-title">Roll Storage (Work-in-Progress)</div>
+        <div class="grid-4">
+          <div class="location-card"><div class="loc-code">C-01</div><div class="loc-name">Printed Rolls</div><div class="loc-count">14 Rolls</div></div>
+          <div class="location-card"><div class="loc-code">C-02</div><div class="loc-name">Laminated Rolls</div><div class="loc-count">8 Rolls</div></div>
+          <div class="location-card"><div class="loc-code">C-03</div><div class="loc-name">Slit Rolls</div><div class="loc-count">22 Rolls</div></div>
+        </div>
+      </div>
+
+      <div class="col" style="gap:16px;">
+        <div class="card-title">Finished Goods</div>
+        <div class="grid-4">
+          <div class="location-card"><div class="loc-code">D-01</div><div class="loc-name">Packed Cartons</div><div class="loc-count">340 Cartons</div></div>
+          <div class="location-card"><div class="loc-code">D-02</div><div class="loc-name">Dispatch Staging</div><div class="loc-count">86 Cartons</div></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+<script src="shell.js"></script>
+</body>
+</html>

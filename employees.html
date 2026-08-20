@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>FactoryOS — Employees</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="employees" data-title="Employees" data-breadcrumb="Resources">
+<div class="app-shell">
+  <div class="sidebar">
+  <div class="sidebar-logo"><div class="mark"></div><div class="word">FactoryOS</div></div>
+  <div class="nav-scroll">
+    <div class="nav-list">
+      <a class="nav-item" href="dashboard.html"><span class="icon"></span>Overview</a>
+    </div>
+    <div><div class="nav-group-label">Operations</div><div class="nav-list">
+      <a class="nav-item" href="production.html"><span class="icon"></span>Orders</a>
+      <a class="nav-item" href="production.html"><span class="icon"></span>Production</a>
+      <a class="nav-item" href="production.html"><span class="icon"></span>Planning</a>
+      <a class="nav-item" href="dashboard.html"><span class="icon"></span>Ongoing Production</a>
+    </div></div>
+    <div><div class="nav-group-label">Materials</div><div class="nav-list">
+      <a class="nav-item" href="inventory.html"><span class="icon"></span>Inventory</a>
+      <a class="nav-item" href="warehouse.html"><span class="icon"></span>Warehouse</a>
+    </div></div>
+    <div><div class="nav-group-label">Control</div><div class="nav-list">
+      <a class="nav-item" href="quality-waste.html"><span class="icon"></span>Quality & Waste</a>
+    </div></div>
+    <div><div class="nav-group-label">Resources</div><div class="nav-list">
+      <a class="nav-item" href="machines.html"><span class="icon"></span>Machines</a>
+      <a class="nav-item active" href="employees.html"><span class="icon"></span>Employees</a>
+      <a class="nav-item" href="machines.html"><span class="icon"></span>Maintenance</a>
+    </div></div>
+    <div><div class="nav-group-label">Insights</div><div class="nav-list">
+      <a class="nav-item" href="reports.html"><span class="icon"></span>Reports</a>
+      <a class="nav-item" href="ai-assistant.html"><span class="icon"></span>AI Assistant</a>
+    </div></div>
+  </div>
+  <div class="sidebar-footer"><a class="nav-item" href="#"><span class="icon"></span>Settings</a></div>
+</div>
+  <div class="main">
+    <div class="header">
+  <div class="header-titles">
+    <div class="header-breadcrumb">Resources</div>
+    <div class="header-title">Employees</div>
+  </div>
+  <div class="header-search"><span class="icon"></span>Ask about your factory...</div>
+  <div class="header-right">
+    <div class="header-icon-btn">⌕</div>
+    <div class="header-icon-btn">🔔<span class="dot"></span></div>
+    <div class="header-avatar">AD</div>
+  </div>
+</div>
+    <div class="content">
+
+      <div class="content-header">
+        <div class="content-heading">
+          <h1>Employees</h1>
+          <p>Who's on shift, and what they're working on right now.</p>
+        </div>
+        <button class="btn btn-primary">+ Add Employee</button>
+      </div>
+
+      <div class="summary-strip" style="grid-template-columns:repeat(4,1fr);">
+        <div class="summary-chip"><div class="n">42</div><div class="l">Total Employees</div></div>
+        <div class="summary-chip"><div class="n">31</div><div class="l">Currently Working</div></div>
+        <div class="summary-chip"><div class="n">3</div><div class="l">On Leave</div></div>
+        <div class="summary-chip"><div class="n">18</div><div class="l">Operators Active</div></div>
+      </div>
+
+      <div class="table-wrap">
+        <table class="table">
+          <thead><tr><th>Employee</th><th>Role</th><th>Shift</th><th>Current Machine</th><th>Current Order</th><th>Status</th></tr></thead>
+          <tbody>
+            <tr class="row-link" onclick="location.href='machines.html'">
+              <td>Rahul</td><td class="muted">Printing Operator</td><td class="muted">Morning</td><td>Printing #1</td><td class="mono">#1024</td><td><span class="status-badge success"><span class="dot"></span>Working</span></td>
+            </tr>
+            <tr class="row-link" onclick="location.href='machines.html'">
+              <td>Amit</td><td class="muted">Printing Operator</td><td class="muted">Morning</td><td>Printing #2</td><td class="mono">#1027</td><td><span class="status-badge success"><span class="dot"></span>Working</span></td>
+            </tr>
+            <tr class="row-link" onclick="location.href='machines.html'">
+              <td>Suresh</td><td class="muted">Lamination Operator</td><td class="muted">Morning</td><td>Lamination #1</td><td class="mono">#1019</td><td><span class="status-badge success"><span class="dot"></span>Working</span></td>
+            </tr>
+            <tr class="row-link" onclick="location.href='machines.html'">
+              <td>Vijay</td><td class="muted">Lamination Operator</td><td class="muted">Morning</td><td>Lamination #2</td><td class="mono">#1022</td><td><span class="status-badge success"><span class="dot"></span>Working</span></td>
+            </tr>
+            <tr class="row-link" onclick="location.href='machines.html'">
+              <td>Manoj</td><td class="muted">Slitting Operator</td><td class="muted">Morning</td><td>Slitting #1</td><td class="mono">#1015</td><td><span class="status-badge success"><span class="dot"></span>Working</span></td>
+            </tr>
+            <tr class="row-link" onclick="location.href='machines.html'">
+              <td>Prakash</td><td class="muted">Slitting Operator</td><td class="muted">Morning</td><td>Slitting #2</td><td class="mono">#1020</td><td><span class="status-badge success"><span class="dot"></span>Working</span></td>
+            </tr>
+            <tr class="row-link" onclick="location.href='machines.html'">
+              <td>Rakesh</td><td class="muted">Pouching Operator</td><td class="muted">Morning</td><td>Pouching #3</td><td class="mono">#1018</td><td><span class="status-badge success"><span class="dot"></span>Working</span></td>
+            </tr>
+            <tr>
+              <td>Priya Sharma</td><td class="muted">Production Supervisor</td><td class="muted">Morning</td><td class="muted">—</td><td class="muted">Floor</td><td><span class="status-badge success"><span class="dot"></span>Working</span></td>
+            </tr>
+            <tr>
+              <td>Deepak</td><td class="muted">Quality Inspector</td><td class="muted">Morning</td><td class="muted">—</td><td class="mono">#1028</td><td><span class="status-badge success"><span class="dot"></span>Working</span></td>
+            </tr>
+            <tr>
+              <td>Sunita</td><td class="muted">Warehouse Staff</td><td class="muted">Morning</td><td class="muted">—</td><td class="muted">—</td><td><span class="status-badge neutral"><span class="dot"></span>On Leave</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </div>
+</div>
+<script src="shell.js"></script>
+</body>
+</html>

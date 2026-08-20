@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>FactoryOS — Factory Dashboard</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="overview" data-title="Factory Overview" data-breadcrumb="Overview">
+<div class="app-shell">
+  <div class="sidebar">
+  <div class="sidebar-logo"><div class="mark"></div><div class="word">FactoryOS</div></div>
+  <div class="nav-scroll">
+    <div class="nav-list">
+      <a class="nav-item active" href="dashboard.html"><span class="icon"></span>Overview</a>
+    </div>
+    <div><div class="nav-group-label">Operations</div><div class="nav-list">
+      <a class="nav-item" href="order-detail.html"><span class="icon"></span>Orders</a>
+      <a class="nav-item" href="production.html"><span class="icon"></span>Production</a>
+      <a class="nav-item" href="production.html"><span class="icon"></span>Planning</a>
+      <a class="nav-item" href="dashboard.html"><span class="icon"></span>Ongoing Production</a>
+    </div></div>
+    <div><div class="nav-group-label">Materials</div><div class="nav-list">
+      <a class="nav-item" href="inventory.html"><span class="icon"></span>Inventory</a>
+      <a class="nav-item" href="warehouse.html"><span class="icon"></span>Warehouse</a>
+    </div></div>
+    <div><div class="nav-group-label">Control</div><div class="nav-list">
+      <a class="nav-item" href="quality-waste.html"><span class="icon"></span>Quality & Waste</a>
+    </div></div>
+    <div><div class="nav-group-label">Resources</div><div class="nav-list">
+      <a class="nav-item" href="machines.html"><span class="icon"></span>Machines</a>
+      <a class="nav-item" href="employees.html"><span class="icon"></span>Employees</a>
+      <a class="nav-item" href="machines.html"><span class="icon"></span>Maintenance</a>
+    </div></div>
+    <div><div class="nav-group-label">Insights</div><div class="nav-list">
+      <a class="nav-item" href="reports.html"><span class="icon"></span>Reports</a>
+    </div></div>
+  </div>
+  <div class="sidebar-footer"><a class="nav-item" href="#"><span class="icon"></span>Settings</a></div>
+</div>
+  <div class="main">
+    <div class="header">
+  <div class="header-titles">
+    <div class="header-breadcrumb">Overview</div>
+    <div class="header-title">Factory Overview</div>
+  </div>
+  <div class="header-search"><span class="icon"></span>Ask about your factory...</div>
+  <div class="header-right">
+    <div class="header-icon-btn">⌕</div>
+    <div class="header-icon-btn">🔔<span class="dot"></span></div>
+    <div class="header-avatar">AD</div>
+  </div>
+</div>
+    <div class="content">
+
+      <div class="content-header">
+        <div class="content-heading">
+          <h1>Good Morning, Admin</h1>
+          <p>Factory Overview · 20 August 2026</p>
+        </div>
+        <div class="btn-row">
+          <a class="btn btn-secondary" href="ai-assistant.html"><span class="icon"></span>Ask Assistant</a>
+          <a class="btn btn-primary" href="production.html">+ New Production Order</a>
+        </div>
+      </div>
+
+      <div class="kpi-grid">
+        <div class="kpi-card">
+          <div class="kpi-label">Active Production Orders</div>
+          <div class="kpi-value">12</div>
+          <div class="kpi-sub">Across 4 stages</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">Production Running</div>
+          <div class="kpi-value">8</div>
+          <div class="kpi-sub ok">On schedule</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">Today's Output</div>
+          <div class="kpi-value">12,450 <span style="font-size:14px;font-weight:600;color:var(--text-tertiary)">KG</span></div>
+          <div class="kpi-sub ok">▲ 6% vs yesterday</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">Today's Waste</div>
+          <div class="kpi-value">2.8<span style="font-size:14px;font-weight:600;color:var(--text-tertiary)">%</span></div>
+          <div class="kpi-sub">Within target</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">Inventory Value</div>
+          <div class="kpi-value">₹18.4L</div>
+          <div class="kpi-sub">Across 6 categories</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">Machines Running</div>
+          <div class="kpi-value">8 <span style="font-size:14px;font-weight:600;color:var(--text-tertiary)">/ 10</span></div>
+          <a class="kpi-sub" href="machines.html" style="color:var(--primary);font-weight:700">View machines →</a>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">Attention Required</div>
+          <div class="kpi-value" style="color:var(--danger)">3</div>
+          <a class="kpi-sub danger" href="quality-waste.html">View issues →</a>
+        </div>
+      </div>
+
+      <div class="card" style="padding:20px 20px 24px;">
+        <div class="section-title-row" style="margin-bottom:16px;">
+          <h2>Live Production</h2>
+          <span class="hint">12 orders running across 4 stages right now</span>
+        </div>
+
+        <div class="stage-board">
+          <!-- PRINTING -->
+          <div class="stage-column">
+            <div class="stage-column-header">
+              <span class="stage-title">Printing</span>
+              <span class="stage-count">2</span>
+            </div>
+
+            <div class="production-card" onclick="location.href='order-detail.html'">
+              <div class="pc-top">
+                <span class="order-id">#1024</span>
+                <span class="status-badge info"><span class="dot"></span>Running</span>
+              </div>
+              <div class="product-name">500g Masala Pouch</div>
+              <div class="meta-row"><span>Quantity</span><span>100,000 pcs</span></div>
+              <div class="meta-row"><span>Machine</span><span>P-02</span></div>
+              <div class="meta-row"><span>Operator</span><span>Rahul</span></div>
+              <div class="progress-row">
+                <div class="progress"><span style="width:80%"></span></div>
+                <span class="progress-pct">80%</span>
+              </div>
+            </div>
+
+            <div class="production-card" onclick="location.href='order-detail.html'">
+              <div class="pc-top">
+                <span class="order-id">#1027</span>
+                <span class="status-badge info"><span class="dot"></span>Running</span>
+              </div>
+              <div class="product-name">Snack Pouch</div>
+              <div class="meta-row"><span>Quantity</span><span>75,000 pcs</span></div>
+              <div class="meta-row"><span>Machine</span><span>P-01</span></div>
+              <div class="meta-row"><span>Operator</span><span>Amit</span></div>
+              <div class="progress-row">
+                <div class="progress"><span style="width:48%"></span></div>
+                <span class="progress-pct">48%</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- LAMINATION -->
+          <div class="stage-column">
+            <div class="stage-column-header">
+              <span class="stage-title">Lamination</span>
+              <span class="stage-count">2</span>
+            </div>
+
+            <div class="production-card" onclick="location.href='order-detail.html'">
+              <div class="pc-top">
+                <span class="order-id">#1019</span>
+                <span class="status-badge info"><span class="dot"></span>Running</span>
+              </div>
+              <div class="product-name">Coffee Pouch</div>
+              <div class="meta-row"><span>Quantity</span><span>60,000 pcs</span></div>
+              <div class="meta-row"><span>Machine</span><span>L-01</span></div>
+              <div class="meta-row"><span>Operator</span><span>Suresh</span></div>
+              <div class="progress-row">
+                <div class="progress"><span style="width:70%"></span></div>
+                <span class="progress-pct">70%</span>
+              </div>
+            </div>
+
+            <div class="production-card" onclick="location.href='order-detail.html'">
+              <div class="pc-top">
+                <span class="order-id">#1022</span>
+                <span class="status-badge info"><span class="dot"></span>Running</span>
+              </div>
+              <div class="product-name">Flour Pouch</div>
+              <div class="meta-row"><span>Quantity</span><span>25,000 pcs</span></div>
+              <div class="meta-row"><span>Machine</span><span>L-02</span></div>
+              <div class="meta-row"><span>Operator</span><span>Vijay</span></div>
+              <div class="progress-row">
+                <div class="progress"><span style="width:32%"></span></div>
+                <span class="progress-pct">32%</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- SLITTING -->
+          <div class="stage-column">
+            <div class="stage-column-header">
+              <span class="stage-title">Slitting</span>
+              <span class="stage-count">2</span>
+            </div>
+
+            <div class="production-card" onclick="location.href='order-detail.html'">
+              <div class="pc-top">
+                <span class="order-id">#1015</span>
+                <span class="status-badge success"><span class="dot"></span>Running</span>
+              </div>
+              <div class="product-name">Rice Pouch</div>
+              <div class="meta-row"><span>Quantity</span><span>12,000 pcs</span></div>
+              <div class="meta-row"><span>Machine</span><span>S-01</span></div>
+              <div class="meta-row"><span>Operator</span><span>Manoj</span></div>
+              <div class="progress-row">
+                <div class="progress"><span style="width:90%"></span></div>
+                <span class="progress-pct">90%</span>
+              </div>
+            </div>
+
+            <div class="production-card" onclick="location.href='order-detail.html'">
+              <div class="pc-top">
+                <span class="order-id">#1020</span>
+                <span class="status-badge info"><span class="dot"></span>Running</span>
+              </div>
+              <div class="product-name">Tea Pouch</div>
+              <div class="meta-row"><span>Quantity</span><span>90,000 pcs</span></div>
+              <div class="meta-row"><span>Machine</span><span>S-02</span></div>
+              <div class="meta-row"><span>Operator</span><span>Prakash</span></div>
+              <div class="progress-row">
+                <div class="progress"><span style="width:60%"></span></div>
+                <span class="progress-pct">60%</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- POUCHING -->
+          <div class="stage-column">
+            <div class="stage-column-header">
+              <span class="stage-title">Pouching</span>
+              <span class="stage-count">1</span>
+            </div>
+
+            <div class="production-card" onclick="location.href='order-detail.html'">
+              <div class="pc-top">
+                <span class="order-id">#1018</span>
+                <span class="status-badge warning"><span class="dot"></span>Running</span>
+              </div>
+              <div class="product-name">Oil Pouch</div>
+              <div class="meta-row"><span>Quantity</span><span>40,000 pcs</span></div>
+              <div class="meta-row"><span>Machine</span><span>PO-03</span></div>
+              <div class="meta-row"><span>Operator</span><span>Rakesh</span></div>
+              <div class="progress-row">
+                <div class="progress"><span style="width:40%"></span></div>
+                <span class="progress-pct">40%</span>
+              </div>
+            </div>
+
+            <div class="production-card" style="opacity:.6" onclick="location.href='order-detail.html'">
+              <div class="pc-top">
+                <span class="order-id">#1028</span>
+                <span class="status-badge neutral"><span class="dot"></span>Awaiting QC</span>
+              </div>
+              <div class="product-name">Detergent Pouch</div>
+              <div class="meta-row"><span>Quantity</span><span>18,000 pcs</span></div>
+              <div class="meta-row"><span>Machine</span><span>—</span></div>
+              <div class="meta-row"><span>Operator</span><span>—</span></div>
+              <div class="progress-row">
+                <div class="progress"><span style="width:100%"></span></div>
+                <span class="progress-pct">QC</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row wrap" style="gap:16px;">
+        <div class="alert warning" style="flex:1;min-width:280px;">
+          <span class="icon" style="width:18px;height:18px;border-radius:6px;background:var(--warning);flex:none;"></span>
+          <div>
+            <div class="a-title">Order #1022 running behind schedule</div>
+            <div class="a-body">Lamination progress is 12% below target for its due date. <a href="order-detail.html" style="color:var(--warning);font-weight:700;">Review order →</a></div>
+          </div>
+        </div>
+        <div class="alert danger" style="flex:1;min-width:280px;">
+          <span class="icon" style="width:18px;height:18px;border-radius:6px;background:var(--danger);flex:none;"></span>
+          <div>
+            <div class="a-title">PE 50µm running low</div>
+            <div class="a-body">1,820 KG remaining, below reorder threshold. <a href="inventory.html" style="color:var(--danger);font-weight:700;">View inventory →</a></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+<script src="shell.js"></script>
+</body>
+</html>

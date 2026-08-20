@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>FactoryOS — Production</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="production" data-title="Production" data-breadcrumb="Operations">
+<div class="app-shell">
+  <div class="sidebar">
+  <div class="sidebar-logo"><div class="mark"></div><div class="word">FactoryOS</div></div>
+  <div class="nav-scroll">
+    <div class="nav-list">
+      <a class="nav-item" href="dashboard.html"><span class="icon"></span>Overview</a>
+    </div>
+    <div><div class="nav-group-label">Operations</div><div class="nav-list">
+      <a class="nav-item" href="production.html"><span class="icon"></span>Orders</a>
+      <a class="nav-item active" href="production.html"><span class="icon"></span>Production</a>
+      <a class="nav-item" href="production.html"><span class="icon"></span>Planning</a>
+      <a class="nav-item" href="dashboard.html"><span class="icon"></span>Ongoing Production</a>
+    </div></div>
+    <div><div class="nav-group-label">Materials</div><div class="nav-list">
+      <a class="nav-item" href="inventory.html"><span class="icon"></span>Inventory</a>
+      <a class="nav-item" href="warehouse.html"><span class="icon"></span>Warehouse</a>
+    </div></div>
+    <div><div class="nav-group-label">Control</div><div class="nav-list">
+      <a class="nav-item" href="quality-waste.html"><span class="icon"></span>Quality & Waste</a>
+    </div></div>
+    <div><div class="nav-group-label">Resources</div><div class="nav-list">
+      <a class="nav-item" href="machines.html"><span class="icon"></span>Machines</a>
+      <a class="nav-item" href="employees.html"><span class="icon"></span>Employees</a>
+      <a class="nav-item" href="machines.html"><span class="icon"></span>Maintenance</a>
+    </div></div>
+    <div><div class="nav-group-label">Insights</div><div class="nav-list">
+      <a class="nav-item" href="reports.html"><span class="icon"></span>Reports</a>
+      <a class="nav-item" href="ai-assistant.html"><span class="icon"></span>AI Assistant</a>
+    </div></div>
+  </div>
+  <div class="sidebar-footer"><a class="nav-item" href="#"><span class="icon"></span>Settings</a></div>
+</div>
+  <div class="main">
+    <div class="header">
+  <div class="header-titles">
+    <div class="header-breadcrumb">Operations</div>
+    <div class="header-title">Production</div>
+  </div>
+  <div class="header-search"><span class="icon"></span>Ask about your factory...</div>
+  <div class="header-right">
+    <div class="header-icon-btn">⌕</div>
+    <div class="header-icon-btn">🔔<span class="dot"></span></div>
+    <div class="header-avatar">AD</div>
+  </div>
+</div>
+    <div class="content">
+
+      <div class="content-header">
+        <div class="content-heading">
+          <h1>Production</h1>
+          <p>Manage production orders and monitor the factory floor.</p>
+        </div>
+        <a class="btn btn-primary" href="order-detail.html">+ Create Production Order</a>
+      </div>
+
+      <div class="summary-strip">
+        <div class="summary-chip"><div class="n">3</div><div class="l">Planned</div></div>
+        <div class="summary-chip"><div class="n">8</div><div class="l">Running</div></div>
+        <div class="summary-chip"><div class="n">1</div><div class="l">Paused</div></div>
+        <div class="summary-chip"><div class="n">24</div><div class="l">Completed</div></div>
+        <div class="summary-chip"><div class="n" style="color:var(--danger)">1</div><div class="l">Delayed</div></div>
+      </div>
+
+      <div class="filter-bar">
+        <div class="search-box"><span class="icon"></span>Search orders...</div>
+        <div class="filter-chip">Stage: All<span class="caret"></span></div>
+        <div class="filter-chip">Machine: All<span class="caret"></span></div>
+        <div class="filter-chip">Status: All<span class="caret"></span></div>
+        <div class="filter-chip">Due Date<span class="caret"></span></div>
+      </div>
+
+      <div class="table-wrap">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Production Order</th><th>Product</th><th>Customer</th><th>Quantity</th>
+              <th>Current Stage</th><th>Machine</th><th>Operator</th><th>Progress</th><th>Due Date</th><th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="row-link" onclick="location.href='order-detail.html'">
+              <td class="mono">#1024</td><td>500g Masala Pouch</td><td class="muted">ABC Foods</td><td>100,000</td>
+              <td>Printing</td><td>P-02</td><td>Rahul</td>
+              <td><div class="row" style="align-items:center;gap:8px;"><div class="progress" style="width:70px;"><span style="width:80%"></span></div><span class="muted">80%</span></div></td>
+              <td class="muted">30 Aug</td><td><span class="status-badge info"><span class="dot"></span>Running</span></td>
+            </tr>
+            <tr class="row-link" onclick="location.href='order-detail.html'">
+              <td class="mono">#1019</td><td>Coffee Pouch</td><td class="muted">Blue Bean Co.</td><td>60,000</td>
+              <td>Lamination</td><td>L-01</td><td>Suresh</td>
+              <td><div class="row" style="align-items:center;gap:8px;"><div class="progress" style="width:70px;"><span style="width:70%"></span></div><span class="muted">70%</span></div></td>
+              <td class="muted">28 Aug</td><td><span class="status-badge info"><span class="dot"></span>Running</span></td>
+            </tr>
+            <tr class="row-link" onclick="location.href='order-detail.html'">
+              <td class="mono">#1022</td><td>Flour Pouch</td><td class="muted">Golden Mills</td><td>25,000</td>
+              <td>Lamination</td><td>L-02</td><td>Vijay</td>
+              <td><div class="row" style="align-items:center;gap:8px;"><div class="progress" style="width:70px;"><span style="width:32%"></span></div><span class="muted">32%</span></div></td>
+              <td class="muted">24 Aug</td><td><span class="status-badge danger"><span class="dot"></span>Delayed</span></td>
+            </tr>
+            <tr class="row-link" onclick="location.href='order-detail.html'">
+              <td class="mono">#1015</td><td>Rice Pouch</td><td class="muted">Annapurna Foods</td><td>12,000</td>
+              <td>Slitting</td><td>S-01</td><td>Manoj</td>
+              <td><div class="row" style="align-items:center;gap:8px;"><div class="progress" style="width:70px;"><span style="width:90%"></span></div><span class="muted">90%</span></div></td>
+              <td class="muted">21 Aug</td><td><span class="status-badge info"><span class="dot"></span>Running</span></td>
+            </tr>
+            <tr class="row-link" onclick="location.href='order-detail.html'">
+              <td class="mono">#1018</td><td>Oil Pouch</td><td class="muted">Sundrop Ltd.</td><td>40,000</td>
+              <td>Pouch Making</td><td>PO-03</td><td>Rakesh</td>
+              <td><div class="row" style="align-items:center;gap:8px;"><div class="progress" style="width:70px;"><span style="width:40%"></span></div><span class="muted">40%</span></div></td>
+              <td class="muted">2 Sep</td><td><span class="status-badge warning"><span class="dot"></span>Paused</span></td>
+            </tr>
+            <tr class="row-link" onclick="location.href='order-detail.html'">
+              <td class="mono">#1028</td><td>Detergent Pouch</td><td class="muted">CleanCo</td><td>18,000</td>
+              <td>Quality Check</td><td>—</td><td>—</td>
+              <td><div class="row" style="align-items:center;gap:8px;"><div class="progress" style="width:70px;"><span style="width:100%"></span></div><span class="muted">100%</span></div></td>
+              <td class="muted">22 Aug</td><td><span class="status-badge neutral"><span class="dot"></span>Awaiting QC</span></td>
+            </tr>
+            <tr class="row-link" onclick="location.href='order-detail.html'">
+              <td class="mono">#1030</td><td>Spice Pouch</td><td class="muted">Everest Foods</td><td>50,000</td>
+              <td>Material Requirement</td><td>—</td><td>—</td>
+              <td><div class="row" style="align-items:center;gap:8px;"><div class="progress" style="width:70px;"><span style="width:0%"></span></div><span class="muted">0%</span></div></td>
+              <td class="muted">5 Sep</td><td><span class="status-badge neutral"><span class="dot"></span>Planned</span></td>
+            </tr>
+            <tr class="row-link" onclick="location.href='order-detail.html'">
+              <td class="mono">#1011</td><td>Sugar Pouch</td><td class="muted">Madhur Sugars</td><td>30,000</td>
+              <td>Dispatch</td><td>—</td><td>—</td>
+              <td><div class="row" style="align-items:center;gap:8px;"><div class="progress" style="width:70px;"><span style="width:100%"></span></div><span class="muted">100%</span></div></td>
+              <td class="muted">18 Aug</td><td><span class="status-badge success"><span class="dot"></span>Completed</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </div>
+</div>
+<script src="shell.js"></script>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>FactoryOS — Inventory</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="inventory" data-title="Inventory" data-breadcrumb="Materials">
+<div class="app-shell">
+  <div class="sidebar">
+  <div class="sidebar-logo"><div class="mark"></div><div class="word">FactoryOS</div></div>
+  <div class="nav-scroll">
+    <div class="nav-list">
+      <a class="nav-item" href="dashboard.html"><span class="icon"></span>Overview</a>
+    </div>
+    <div><div class="nav-group-label">Operations</div><div class="nav-list">
+      <a class="nav-item" href="production.html"><span class="icon"></span>Orders</a>
+      <a class="nav-item" href="production.html"><span class="icon"></span>Production</a>
+      <a class="nav-item" href="production.html"><span class="icon"></span>Planning</a>
+      <a class="nav-item" href="dashboard.html"><span class="icon"></span>Ongoing Production</a>
+    </div></div>
+    <div><div class="nav-group-label">Materials</div><div class="nav-list">
+      <a class="nav-item active" href="inventory.html"><span class="icon"></span>Inventory</a>
+      <a class="nav-item" href="warehouse.html"><span class="icon"></span>Warehouse</a>
+    </div></div>
+    <div><div class="nav-group-label">Control</div><div class="nav-list">
+      <a class="nav-item" href="quality-waste.html"><span class="icon"></span>Quality & Waste</a>
+    </div></div>
+    <div><div class="nav-group-label">Resources</div><div class="nav-list">
+      <a class="nav-item" href="machines.html"><span class="icon"></span>Machines</a>
+      <a class="nav-item" href="employees.html"><span class="icon"></span>Employees</a>
+      <a class="nav-item" href="machines.html"><span class="icon"></span>Maintenance</a>
+    </div></div>
+    <div><div class="nav-group-label">Insights</div><div class="nav-list">
+      <a class="nav-item" href="reports.html"><span class="icon"></span>Reports</a>
+      <a class="nav-item" href="ai-assistant.html"><span class="icon"></span>AI Assistant</a>
+    </div></div>
+  </div>
+  <div class="sidebar-footer"><a class="nav-item" href="#"><span class="icon"></span>Settings</a></div>
+</div>
+  <div class="main">
+    <div class="header">
+  <div class="header-titles">
+    <div class="header-breadcrumb">Materials</div>
+    <div class="header-title">Inventory</div>
+  </div>
+  <div class="header-search"><span class="icon"></span>Ask about your factory...</div>
+  <div class="header-right">
+    <div class="header-icon-btn">⌕</div>
+    <div class="header-icon-btn">🔔<span class="dot"></span></div>
+    <div class="header-avatar">AD</div>
+  </div>
+</div>
+    <div class="content">
+
+      <div class="content-header">
+        <div class="content-heading">
+          <h1>Inventory</h1>
+          <p>Track raw materials, consumables, and finished goods stock.</p>
+        </div>
+        <button class="btn btn-primary">+ Receive Material</button>
+      </div>
+
+      <div class="summary-strip" style="grid-template-columns:repeat(4,1fr);">
+        <div class="summary-chip"><div class="n">86</div><div class="l">Total Materials</div></div>
+        <div class="summary-chip"><div class="n" style="color:var(--warning)">7</div><div class="l">Low Stock</div></div>
+        <div class="summary-chip"><div class="n">48,920 KG</div><div class="l">Total Quantity</div></div>
+        <div class="summary-chip"><div class="n">₹18.4L</div><div class="l">Inventory Value</div></div>
+      </div>
+
+      <div class="filter-bar">
+        <div class="filter-chip" style="background:var(--primary-bg);color:var(--primary);border-color:transparent;font-weight:700;">All</div>
+        <div class="filter-chip">Films</div>
+        <div class="filter-chip">Ink</div>
+        <div class="filter-chip">Adhesive</div>
+        <div class="filter-chip">Solvents</div>
+        <div class="filter-chip">Consumables</div>
+        <div class="filter-chip">Finished Goods</div>
+        <div class="spacer"></div>
+        <div class="search-box"><span class="icon"></span>Search materials...</div>
+      </div>
+
+      <div class="table-wrap">
+        <table class="table">
+          <thead><tr><th>Material</th><th>Batch</th><th>Available</th><th>Unit</th><th>Warehouse</th><th>Status</th><th>Rate</th></tr></thead>
+          <tbody>
+            <tr class="row-link" onclick="location.href='material-detail.html'">
+              <td class="mono">PET 12 µm</td><td class="muted">PET-2026-081</td><td>2,450</td><td class="muted">KG</td><td class="muted">Warehouse A</td><td><span class="status-badge success"><span class="dot"></span>Healthy</span></td><td class="muted">₹210/KG</td>
+            </tr>
+            <tr class="row-link" onclick="location.href='material-detail.html'">
+              <td class="mono">PE 50 µm</td><td class="muted">PE-2026-031</td><td>1,820</td><td class="muted">KG</td><td class="muted">Warehouse A</td><td><span class="status-badge warning"><span class="dot"></span>Low Stock</span></td><td class="muted">₹185/KG</td>
+            </tr>
+            <tr class="row-link" onclick="location.href='material-detail.html'">
+              <td>Ink — Cyan</td><td class="muted">INK-2026-014</td><td>340</td><td class="muted">KG</td><td class="muted">Warehouse A</td><td><span class="status-badge success"><span class="dot"></span>Healthy</span></td><td class="muted">₹640/KG</td>
+            </tr>
+            <tr class="row-link" onclick="location.href='material-detail.html'">
+              <td>Adhesive — PU</td><td class="muted">ADH-2026-009</td><td>210</td><td class="muted">KG</td><td class="muted">Warehouse A</td><td><span class="status-badge warning"><span class="dot"></span>Low Stock</span></td><td class="muted">₹480/KG</td>
+            </tr>
+            <tr class="row-link" onclick="location.href='material-detail.html'">
+              <td>Solvent — Ethyl Acetate</td><td class="muted">SOL-2026-002</td><td>640</td><td class="muted">L</td><td class="muted">Warehouse A</td><td><span class="status-badge success"><span class="dot"></span>Healthy</span></td><td class="muted">₹96/L</td>
+            </tr>
+            <tr class="row-link" onclick="location.href='material-detail.html'">
+              <td>Core Tubes</td><td class="muted">CON-2026-041</td><td>1,240</td><td class="muted">pcs</td><td class="muted">Warehouse A</td><td><span class="status-badge success"><span class="dot"></span>Healthy</span></td><td class="muted">₹18/pc</td>
+            </tr>
+            <tr class="row-link" onclick="location.href='material-detail.html'">
+              <td>500g Masala Pouch (FG)</td><td class="muted">FG-2026-1024</td><td>62,000</td><td class="muted">pcs</td><td class="muted">Finished Goods</td><td><span class="status-badge info"><span class="dot"></span>In Progress</span></td><td class="muted">—</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </div>
+</div>
+<script src="shell.js"></script>
+</body>
+</html>

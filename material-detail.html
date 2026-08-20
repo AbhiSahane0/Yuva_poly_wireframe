@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>FactoryOS — PET 12 µm</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="inventory" data-title="PET 12 µm" data-breadcrumb="Materials / Inventory">
+<div class="app-shell">
+  <div class="sidebar">
+  <div class="sidebar-logo"><div class="mark"></div><div class="word">FactoryOS</div></div>
+  <div class="nav-scroll">
+    <div class="nav-list">
+      <a class="nav-item" href="dashboard.html"><span class="icon"></span>Overview</a>
+    </div>
+    <div><div class="nav-group-label">Operations</div><div class="nav-list">
+      <a class="nav-item" href="production.html"><span class="icon"></span>Orders</a>
+      <a class="nav-item" href="production.html"><span class="icon"></span>Production</a>
+      <a class="nav-item" href="production.html"><span class="icon"></span>Planning</a>
+      <a class="nav-item" href="dashboard.html"><span class="icon"></span>Ongoing Production</a>
+    </div></div>
+    <div><div class="nav-group-label">Materials</div><div class="nav-list">
+      <a class="nav-item active" href="inventory.html"><span class="icon"></span>Inventory</a>
+      <a class="nav-item" href="warehouse.html"><span class="icon"></span>Warehouse</a>
+    </div></div>
+    <div><div class="nav-group-label">Control</div><div class="nav-list">
+      <a class="nav-item" href="quality-waste.html"><span class="icon"></span>Quality & Waste</a>
+    </div></div>
+    <div><div class="nav-group-label">Resources</div><div class="nav-list">
+      <a class="nav-item" href="machines.html"><span class="icon"></span>Machines</a>
+      <a class="nav-item" href="employees.html"><span class="icon"></span>Employees</a>
+      <a class="nav-item" href="machines.html"><span class="icon"></span>Maintenance</a>
+    </div></div>
+    <div><div class="nav-group-label">Insights</div><div class="nav-list">
+      <a class="nav-item" href="reports.html"><span class="icon"></span>Reports</a>
+      <a class="nav-item" href="ai-assistant.html"><span class="icon"></span>AI Assistant</a>
+    </div></div>
+  </div>
+  <div class="sidebar-footer"><a class="nav-item" href="#"><span class="icon"></span>Settings</a></div>
+</div>
+  <div class="main">
+    <div class="header">
+  <div class="header-titles">
+    <div class="header-breadcrumb">Materials / Inventory</div>
+    <div class="header-title">PET 12 µm</div>
+  </div>
+  <div class="header-search"><span class="icon"></span>Ask about your factory...</div>
+  <div class="header-right">
+    <div class="header-icon-btn">⌕</div>
+    <div class="header-icon-btn">🔔<span class="dot"></span></div>
+    <div class="header-avatar">AD</div>
+  </div>
+</div>
+    <div class="content">
+
+      <div class="content-header">
+        <div class="content-heading">
+          <h1>PET 12 µm</h1>
+          <p>Batch PET-2026-081 · Warehouse A · Film Storage</p>
+        </div>
+        <div class="btn-row">
+          <button class="btn btn-secondary">Transfer</button>
+          <button class="btn btn-primary">Issue Material</button>
+        </div>
+      </div>
+
+      <div class="grid-3">
+        <div class="item-card"><div class="ic-stat"><div class="n">2,450 KG</div><div class="l">Available Stock</div></div></div>
+        <div class="item-card"><div class="ic-stat"><div class="n">500 KG</div><div class="l">Reserved</div></div></div>
+        <div class="item-card"><div class="ic-stat"><div class="n" style="color:var(--success)">1,950 KG</div><div class="l">Available</div></div></div>
+      </div>
+
+      <div class="card-title">Roll List</div>
+      <div class="table-wrap">
+        <table class="table">
+          <thead><tr><th>Roll ID</th><th>Batch</th><th>Weight</th><th>Width</th><th>Location</th><th>Status</th></tr></thead>
+          <tbody>
+            <tr><td class="mono">R-001</td><td class="muted">PET-2026-081</td><td>620 KG</td><td class="muted">1000mm</td><td class="muted">A-01</td><td><span class="status-badge success"><span class="dot"></span>Available</span></td></tr>
+            <tr><td class="mono">R-002</td><td class="muted">PET-2026-081</td><td>610 KG</td><td class="muted">1000mm</td><td class="muted">A-01</td><td><span class="status-badge success"><span class="dot"></span>Available</span></td></tr>
+            <tr><td class="mono">R-003</td><td class="muted">PET-2026-081</td><td>605 KG</td><td class="muted">1000mm</td><td class="muted">A-01</td><td><span class="status-badge info"><span class="dot"></span>Reserved</span></td></tr>
+            <tr><td class="mono">R-004</td><td class="muted">PET-2026-081</td><td>615 KG</td><td class="muted">1000mm</td><td class="muted">A-01</td><td><span class="status-badge success"><span class="dot"></span>Available</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="card-title">Stock Movement History</div>
+      <div class="table-wrap">
+        <table class="table">
+          <thead><tr><th>Date</th><th>Type</th><th>Quantity</th><th>Reference</th><th>Balance</th></tr></thead>
+          <tbody>
+            <tr><td class="muted">10 Aug</td><td>Purchase</td><td style="color:var(--success)">+3,000 KG</td><td class="muted">PO-4471</td><td>3,000 KG</td></tr>
+            <tr><td class="muted">13 Aug</td><td>Production Consumption</td><td style="color:var(--danger)">-890 KG</td><td class="muted">Order #1024</td><td>2,110 KG</td></tr>
+            <tr><td class="muted">16 Aug</td><td>Waste</td><td style="color:var(--danger)">-24 KG</td><td class="muted">Order #1024 · Printing</td><td>2,086 KG</td></tr>
+            <tr><td class="muted">17 Aug</td><td>Purchase</td><td style="color:var(--success)">+400 KG</td><td class="muted">PO-4488</td><td>2,486 KG</td></tr>
+            <tr><td class="muted">18 Aug</td><td>Adjustment</td><td style="color:var(--danger)">-36 KG</td><td class="muted">Cycle count</td><td>2,450 KG</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </div>
+</div>
+<script src="shell.js"></script>
+</body>
+</html>

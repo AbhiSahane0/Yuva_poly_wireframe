@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>FactoryOS — Prototype Index</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="styles.css">
+<style>
+  .index-shell{ max-width:920px; margin:0 auto; padding:56px 24px 80px; }
+  .index-hero{ margin-bottom:36px; }
+  .index-hero h1{ font-size:30px; font-weight:800; }
+  .index-hero p{ color:var(--text-secondary); margin-top:8px; font-size:15px; max-width:640px; }
+  .index-group{ margin-bottom:28px; }
+  .index-group h2{ font-size:13px; text-transform:uppercase; letter-spacing:.06em; color:var(--text-tertiary); font-weight:700; margin-bottom:12px; }
+  .index-links{ display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
+  .index-link{ background:#fff; border:1px solid var(--border-default); border-radius:var(--radius-md); padding:16px; box-shadow:var(--shadow-card); }
+  .index-link .t{ font-weight:700; font-size:14px; }
+  .index-link .d{ font-size:12px; color:var(--text-secondary); margin-top:4px; }
+  .index-link:hover{ border-color:var(--primary); }
+  .role-note{ background:var(--primary-bg); border-radius:var(--radius-lg); padding:20px 24px; font-size:13px; color:var(--text-secondary); }
+  .role-note b{ color:var(--text-primary); }
+</style>
+</head>
+<body>
+<div class="index-shell">
+  <div class="index-hero">
+    <h1>FactoryOS — Manufacturing Management Portal</h1>
+    <p>A wireframe prototype for a flexible-packaging manufacturing platform. Start with the Factory Dashboard, or jump to any screen below. Every screen shares the same sidebar, header, and component system.</p>
+  </div>
+
+  <div class="index-group">
+    <h2>Start here</h2>
+    <div class="index-links">
+      <a class="index-link" href="dashboard.html"><div class="t">Factory Dashboard</div><div class="d">Live production across all stages, KPIs, alerts</div></a>
+      <a class="index-link" href="order-detail.html"><div class="t">Production Order #1024</div><div class="d">Full order journey — timeline, materials, rolls, cost</div></a>
+      <a class="index-link" href="operator.html"><div class="t">Operator View — Rahul</div><div class="d">The extremely simple screen a machine operator sees</div></a>
+    </div>
+  </div>
+
+  <div class="index-group">
+    <h2>Operations</h2>
+    <div class="index-links">
+      <a class="index-link" href="production.html"><div class="t">Production</div><div class="d">All production orders, filters, table</div></a>
+      <a class="index-link" href="order-detail.html"><div class="t">Production Order Detail</div><div class="d">Overview / Materials / Rolls / Quality / Waste / Cost</div></a>
+    </div>
+  </div>
+
+  <div class="index-group">
+    <h2>Materials</h2>
+    <div class="index-links">
+      <a class="index-link" href="inventory.html"><div class="t">Inventory</div><div class="d">Stock by category, low-stock flags</div></a>
+      <a class="index-link" href="material-detail.html"><div class="t">Material Detail — PET 12µm</div><div class="d">Roll list, stock movement history</div></a>
+      <a class="index-link" href="warehouse.html"><div class="t">Warehouse</div><div class="d">Zones, locations, receive / issue / transfer</div></a>
+    </div>
+  </div>
+
+  <div class="index-group">
+    <h2>Control &amp; Resources</h2>
+    <div class="index-links">
+      <a class="index-link" href="quality-waste.html"><div class="t">Quality &amp; Waste</div><div class="d">Rejections, waste trend, open issues</div></a>
+      <a class="index-link" href="machines.html"><div class="t">Machines</div><div class="d">Live machine status cards</div></a>
+      <a class="index-link" href="employees.html"><div class="t">Employees</div><div class="d">Who's working, on what, right now</div></a>
+    </div>
+  </div>
+
+  <div class="index-group">
+    <h2>Insights</h2>
+    <div class="index-links">
+      <a class="index-link" href="reports.html"><div class="t">Reports</div><div class="d">Production, inventory, cost, quality reports</div></a>
+      <a class="index-link" href="ai-assistant.html"><div class="t">AI Assistant</div><div class="d">Ask questions about factory data</div></a>
+    </div>
+  </div>
+
+  <div class="role-note">
+    <b>Role-based access (concept):</b> Owner/Management, Production Manager, Supervisor, Warehouse Staff, Quality Staff, and Admin all use the full navigation shown above, scoped by permission. Machine Operators get only the single-screen view (see "Operator View — Rahul") — no sidebar, no menus, just their current job.
+  </div>
+</div>
+</body>
+</html>
