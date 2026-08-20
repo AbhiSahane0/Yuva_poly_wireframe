@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>FactoryOS — Planning</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="planning" data-title="Planning" data-breadcrumb="Operations">
+<div class="app-shell">
+  <div class="sidebar">
+  <div class="sidebar-logo"><div class="mark"></div><div class="word">FactoryOS</div></div>
+  <div class="nav-scroll">
+    <div class="nav-list">
+      <a class="nav-item" href="dashboard.html"><span class="icon"></span>Overview</a>
+    </div>
+    <div><div class="nav-group-label">Operations</div><div class="nav-list">
+      <a class="nav-item" href="orders.html"><span class="icon"></span>Orders</a>
+      <a class="nav-item" href="production.html"><span class="icon"></span>Production</a>
+      <a class="nav-item active" href="planning.html"><span class="icon"></span>Planning</a>
+      <a class="nav-item" href="dashboard.html"><span class="icon"></span>Ongoing Production</a>
+    </div></div>
+    <div><div class="nav-group-label">Materials</div><div class="nav-list">
+      <a class="nav-item" href="inventory.html"><span class="icon"></span>Inventory</a>
+      <a class="nav-item" href="warehouse.html"><span class="icon"></span>Warehouse</a>
+    </div></div>
+    <div><div class="nav-group-label">Control</div><div class="nav-list">
+      <a class="nav-item" href="quality-waste.html"><span class="icon"></span>Quality & Waste</a>
+    </div></div>
+    <div><div class="nav-group-label">Resources</div><div class="nav-list">
+      <a class="nav-item" href="machines.html"><span class="icon"></span>Machines</a>
+      <a class="nav-item" href="employees.html"><span class="icon"></span>Employees</a>
+      <a class="nav-item" href="machines.html"><span class="icon"></span>Maintenance</a>
+    </div></div>
+    <div><div class="nav-group-label">Insights</div><div class="nav-list">
+      <a class="nav-item" href="reports.html"><span class="icon"></span>Reports</a>
+    </div></div>
+  </div>
+  <div class="sidebar-footer"><a class="nav-item" href="#"><span class="icon"></span>Settings</a></div>
+</div>
+  <div class="main">
+    <div class="header">
+  <div class="header-titles">
+    <div class="header-breadcrumb">Operations</div>
+    <div class="header-title">Planning</div>
+  </div>
+  <div class="header-search"><span class="icon"></span>Search orders, materials, machines...</div>
+  <div class="header-right">
+    <div class="header-icon-btn">⌕</div>
+    <div class="header-icon-btn">🔔<span class="dot"></span></div>
+    <div class="header-avatar">AD</div>
+  </div>
+</div>
+    <div class="content">
+
+      <div class="content-header">
+        <div class="content-heading">
+          <h1>Planning</h1>
+          <p>Material requirement checks and production scheduling before an order enters the floor.</p>
+        </div>
+        <button class="btn btn-primary">Run Material Check</button>
+      </div>
+
+      <div class="summary-strip" style="grid-template-columns:repeat(4,1fr);">
+        <div class="summary-chip"><div class="n">6</div><div class="l">Awaiting Material Check</div></div>
+        <div class="summary-chip"><div class="n" style="color:var(--success)">3</div><div class="l">Materials Confirmed</div></div>
+        <div class="summary-chip"><div class="n">4</div><div class="l">Scheduled This Week</div></div>
+        <div class="summary-chip"><div class="n" style="color:var(--danger)">1</div><div class="l">Blocked — Material Shortage</div></div>
+      </div>
+
+      <div class="table-wrap">
+        <table class="table">
+          <thead><tr><th>Order</th><th>Product</th><th>Quantity</th><th>Material Status</th><th>Planned Start</th><th>Planned Machine</th><th>Status</th></tr></thead>
+          <tbody>
+            <tr class="row-link" onclick="location.href='order-detail.html'">
+              <td class="mono">#1030</td><td>Spice Pouch</td><td>50,000</td>
+              <td><span class="status-badge danger"><span class="dot"></span>Shortage — PE 50µm</span></td>
+              <td class="muted">—</td><td class="muted">—</td>
+              <td><span class="status-badge danger"><span class="dot"></span>Blocked</span></td>
+            </tr>
+            <tr class="row-link" onclick="location.href='order-detail.html'">
+              <td class="mono">#1029</td><td>Protein Pouch</td><td>32,000</td>
+              <td><span class="status-badge success"><span class="dot"></span>Available</span></td>
+              <td class="muted">26 Aug</td><td class="muted">P-01</td>
+              <td><span class="status-badge info"><span class="dot"></span>Ready to Schedule</span></td>
+            </tr>
+            <tr class="row-link" onclick="location.href='order-detail.html'">
+              <td class="mono">#1031</td><td>Turmeric Pouch</td><td>28,000</td>
+              <td><span class="status-badge warning"><span class="dot"></span>Checking</span></td>
+              <td class="muted">—</td><td class="muted">—</td>
+              <td><span class="status-badge neutral"><span class="dot"></span>Awaiting Materials</span></td>
+            </tr>
+            <tr class="row-link" onclick="location.href='order-detail.html'">
+              <td class="mono">#1032</td><td>Namkeen Pouch</td><td>45,000</td>
+              <td><span class="status-badge success"><span class="dot"></span>Available</span></td>
+              <td class="muted">27 Aug</td><td class="muted">L-02</td>
+              <td><span class="status-badge success"><span class="dot"></span>Scheduled</span></td>
+            </tr>
+            <tr class="row-link" onclick="location.href='order-detail.html'">
+              <td class="mono">#1033</td><td>Pickle Pouch</td><td>15,000</td>
+              <td><span class="status-badge success"><span class="dot"></span>Available</span></td>
+              <td class="muted">28 Aug</td><td class="muted">P-02</td>
+              <td><span class="status-badge success"><span class="dot"></span>Scheduled</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </div>
+</div>
+<script src="shell.js"></script>
+</body>
+</html>
