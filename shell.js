@@ -1,15 +1,17 @@
-/* FactoryOS — shared app shell (sidebar + header)
-   Each screen sets <body data-page="..." data-title="..." data-breadcrumb="...">
-   and includes <div id="sidebar-root"></div> and <div id="header-root"></div> */
+/* FactoryOS — shared app shell helpers.
+   Sidebar + header are now baked directly into each page's HTML (so they
+   render with zero JavaScript). This NAV map is kept only as the source of
+   truth if a page ever needs regenerating, and renderSidebar/renderHeader
+   below are safe no-ops on pages that no longer have the old root divs. */
 
 const NAV = [
   { group: null, items: [
     { key: "overview", label: "Overview", href: "dashboard.html" }
   ]},
   { group: "Operations", items: [
-    { key: "orders", label: "Orders", href: "order-detail.html" },
+    { key: "orders", label: "Orders", href: "orders.html" },
     { key: "production", label: "Production", href: "production.html" },
-    { key: "planning", label: "Planning", href: "production.html" },
+    { key: "planning", label: "Planning", href: "planning.html" },
     { key: "ongoing", label: "Ongoing Production", href: "dashboard.html" }
   ]},
   { group: "Materials", items: [
@@ -25,7 +27,7 @@ const NAV = [
     { key: "maintenance", label: "Maintenance", href: "machines.html" }
   ]},
   { group: "Insights", items: [
-    { key: "reports", label: "Reports", href: "reports.html" },
+    { key: "reports", label: "Reports", href: "reports.html" }
   ]}
 ];
 
@@ -70,7 +72,7 @@ function renderHeader(title, breadcrumb){
         <div class="header-breadcrumb">${breadcrumb || ""}</div>
         <div class="header-title">${title || ""}</div>
       </div>
-      <div class="header-search"><span class="icon"></span>Ask about your factory...</div>
+      <div class="header-search"><span class="icon"></span>Search orders, materials, machines...</div>
       <div class="header-right">
         <div class="header-icon-btn">⌕</div>
         <div class="header-icon-btn">🔔<span class="dot"></span></div>

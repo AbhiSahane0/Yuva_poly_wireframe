@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>FactoryOS — Orders</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="orders" data-title="Orders" data-breadcrumb="Operations">
+<div class="app-shell">
+  <div class="sidebar">
+  <div class="sidebar-logo"><div class="mark"></div><div class="word">FactoryOS</div></div>
+  <div class="nav-scroll">
+    <div class="nav-list">
+      <a class="nav-item" href="dashboard.html"><span class="icon"></span>Overview</a>
+    </div>
+    <div><div class="nav-group-label">Operations</div><div class="nav-list">
+      <a class="nav-item active" href="orders.html"><span class="icon"></span>Orders</a>
+      <a class="nav-item" href="production.html"><span class="icon"></span>Production</a>
+      <a class="nav-item" href="planning.html"><span class="icon"></span>Planning</a>
+      <a class="nav-item" href="dashboard.html"><span class="icon"></span>Ongoing Production</a>
+    </div></div>
+    <div><div class="nav-group-label">Materials</div><div class="nav-list">
+      <a class="nav-item" href="inventory.html"><span class="icon"></span>Inventory</a>
+      <a class="nav-item" href="warehouse.html"><span class="icon"></span>Warehouse</a>
+    </div></div>
+    <div><div class="nav-group-label">Control</div><div class="nav-list">
+      <a class="nav-item" href="quality-waste.html"><span class="icon"></span>Quality & Waste</a>
+    </div></div>
+    <div><div class="nav-group-label">Resources</div><div class="nav-list">
+      <a class="nav-item" href="machines.html"><span class="icon"></span>Machines</a>
+      <a class="nav-item" href="employees.html"><span class="icon"></span>Employees</a>
+      <a class="nav-item" href="machines.html"><span class="icon"></span>Maintenance</a>
+    </div></div>
+    <div><div class="nav-group-label">Insights</div><div class="nav-list">
+      <a class="nav-item" href="reports.html"><span class="icon"></span>Reports</a>
+    </div></div>
+  </div>
+  <div class="sidebar-footer"><a class="nav-item" href="#"><span class="icon"></span>Settings</a></div>
+</div>
+  <div class="main">
+    <div class="header">
+  <div class="header-titles">
+    <div class="header-breadcrumb">Operations</div>
+    <div class="header-title">Orders</div>
+  </div>
+  <div class="header-search"><span class="icon"></span>Search orders, materials, machines...</div>
+  <div class="header-right">
+    <div class="header-icon-btn">⌕</div>
+    <div class="header-icon-btn">🔔<span class="dot"></span></div>
+    <div class="header-avatar">AD</div>
+  </div>
+</div>
+    <div class="content">
+
+      <div class="content-header">
+        <div class="content-heading">
+          <h1>Orders</h1>
+          <p>Customer orders received, before material allocation and scheduling.</p>
+        </div>
+        <button class="btn btn-primary">+ New Order</button>
+      </div>
+
+      <div class="summary-strip" style="grid-template-columns:repeat(4,1fr);">
+        <div class="summary-chip"><div class="n">37</div><div class="l">Total Orders (Open)</div></div>
+        <div class="summary-chip"><div class="n" style="color:var(--warning)">6</div><div class="l">Pending Material Allocation</div></div>
+        <div class="summary-chip"><div class="n">12</div><div class="l">In Production</div></div>
+        <div class="summary-chip"><div class="n">24</div><div class="l">Completed This Month</div></div>
+      </div>
+
+      <div class="filter-bar">
+        <div class="search-box"><span class="icon"></span>Search orders...</div>
+        <div class="filter-chip">Customer: All<span class="caret"></span></div>
+        <div class="filter-chip">Status: All<span class="caret"></span></div>
+        <div class="filter-chip">Order Date<span class="caret"></span></div>
+      </div>
+
+      <div class="table-wrap">
+        <table class="table">
+          <thead><tr><th>Order</th><th>Customer</th><th>Product</th><th>Quantity</th><th>Order Date</th><th>Due Date</th><th>Status</th></tr></thead>
+          <tbody>
+            <tr class="row-link" onclick="location.href='order-detail.html'">
+              <td class="mono">#1030</td><td>Everest Foods</td><td>Spice Pouch</td><td>50,000</td><td class="muted">18 Aug</td><td class="muted">5 Sep</td>
+              <td><span class="status-badge warning"><span class="dot"></span>Pending Materials</span></td>
+            </tr>
+            <tr class="row-link" onclick="location.href='order-detail.html'">
+              <td class="mono">#1029</td><td>Nutrimax Ltd.</td><td>Protein Pouch</td><td>32,000</td><td class="muted">17 Aug</td><td class="muted">3 Sep</td>
+              <td><span class="status-badge warning"><span class="dot"></span>Pending Materials</span></td>
+            </tr>
+            <tr class="row-link" onclick="location.href='order-detail.html'">
+              <td class="mono">#1028</td><td>CleanCo</td><td>Detergent Pouch</td><td>18,000</td><td class="muted">10 Aug</td><td class="muted">22 Aug</td>
+              <td><span class="status-badge neutral"><span class="dot"></span>Awaiting QC</span></td>
+            </tr>
+            <tr class="row-link" onclick="location.href='order-detail.html'">
+              <td class="mono">#1024</td><td>ABC Foods</td><td>500g Masala Pouch</td><td>100,000</td><td class="muted">12 Aug</td><td class="muted">30 Aug</td>
+              <td><span class="status-badge info"><span class="dot"></span>In Production</span></td>
+            </tr>
+            <tr class="row-link" onclick="location.href='order-detail.html'">
+              <td class="mono">#1019</td><td>Blue Bean Co.</td><td>Coffee Pouch</td><td>60,000</td><td class="muted">6 Aug</td><td class="muted">28 Aug</td>
+              <td><span class="status-badge info"><span class="dot"></span>In Production</span></td>
+            </tr>
+            <tr class="row-link" onclick="location.href='order-detail.html'">
+              <td class="mono">#1011</td><td>Madhur Sugars</td><td>Sugar Pouch</td><td>30,000</td><td class="muted">28 Jul</td><td class="muted">18 Aug</td>
+              <td><span class="status-badge success"><span class="dot"></span>Completed</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </div>
+</div>
+<script src="shell.js"></script>
+</body>
+</html>
