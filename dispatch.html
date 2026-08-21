@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>FactoryOS — Planning</title>
+<title>FactoryOS — Dispatch</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="styles.css">
 </head>
-<body data-page="planning" data-title="Planning" data-breadcrumb="Production">
+<body data-page="dispatch" data-title="Dispatch" data-breadcrumb="Dispatch">
 <div class="app-shell">
   <div class="sidebar">
   <div class="sidebar-logo"><div class="mark"></div><div class="word">FactoryOS</div></div>
@@ -19,7 +19,7 @@
       <a class="nav-item" href="quotation.html"><span class="icon"></span>Quotations</a>
     </div></div>
     <div><div class="nav-group-label">Production</div><div class="nav-list">
-      <a class="nav-item active" href="planning.html"><span class="icon"></span>Planning</a>
+      <a class="nav-item" href="planning.html"><span class="icon"></span>Planning</a>
       <a class="nav-item" href="production.html"><span class="icon"></span>Production</a>
       <a class="nav-item" href="product-master.html"><span class="icon"></span>Product Master</a>
       <a class="nav-item" href="design-cylinder.html"><span class="icon"></span>Design & Cylinders</a>
@@ -38,7 +38,7 @@
       <a class="nav-item" href="machines.html"><span class="icon"></span>Maintenance</a>
     </div></div>
     <div><div class="nav-group-label">Dispatch</div><div class="nav-list">
-      <a class="nav-item" href="dispatch.html"><span class="icon"></span>Dispatch</a>
+      <a class="nav-item active" href="dispatch.html"><span class="icon"></span>Dispatch</a>
     </div></div>
     <div><div class="nav-group-label">Insights</div><div class="nav-list">
       <a class="nav-item" href="reports.html"><span class="icon"></span>Reports</a>
@@ -49,8 +49,8 @@
   <div class="main">
     <div class="header">
   <div class="header-titles">
-    <div class="header-breadcrumb">Production</div>
-    <div class="header-title">Planning</div>
+    <div class="header-breadcrumb">Dispatch</div>
+    <div class="header-title">Dispatch</div>
   </div>
   <div class="header-search"><span class="icon"></span>Search orders, materials, machines...</div>
   <div class="header-right">
@@ -63,55 +63,53 @@
 
       <div class="content-header">
         <div class="content-heading">
-          <h1>Planning</h1>
-          <p>Material requirement checks and production scheduling before an order enters the floor.</p>
+          <h1>Dispatch</h1>
+          <p>Finished goods ready for dispatch, and delivery status for what's already left the factory.</p>
         </div>
-        <button class="btn btn-primary">Run Material Check</button>
+        <button class="btn btn-primary">+ Create Dispatch</button>
       </div>
 
       <div class="summary-strip" style="grid-template-columns:repeat(4,1fr);">
-        <div class="summary-chip"><div class="n">6</div><div class="l">Awaiting Material Check</div></div>
-        <div class="summary-chip"><div class="n" style="color:var(--success)">3</div><div class="l">Materials Confirmed</div></div>
-        <div class="summary-chip"><div class="n">4</div><div class="l">Scheduled This Week</div></div>
-        <div class="summary-chip"><div class="n" style="color:var(--danger)">1</div><div class="l">Blocked — Material Shortage</div></div>
+        <div class="summary-chip"><div class="n" style="color:var(--success)">4</div><div class="l">Ready for Dispatch</div></div>
+        <div class="summary-chip"><div class="n">2</div><div class="l">Dispatched Today</div></div>
+        <div class="summary-chip"><div class="n">5</div><div class="l">In Transit</div></div>
+        <div class="summary-chip"><div class="n">31</div><div class="l">Delivered This Month</div></div>
       </div>
 
       <div class="table-wrap">
         <table class="table">
-          <thead><tr><th>Order</th><th>Product</th><th>Quantity</th><th>Material Status</th><th>Planned Start</th><th>Planned Machine</th><th>Status</th></tr></thead>
+          <thead><tr><th>Order</th><th>Product</th><th>Customer</th><th>Quantity</th><th>Dispatch Date</th><th>Vehicle / LR No.</th><th>Status</th></tr></thead>
           <tbody>
             <tr class="row-link" onclick="location.href='order-detail.html'">
-              <td class="mono">#1030</td><td>Spice Pouch</td><td>50,000</td>
-              <td><span class="status-badge danger"><span class="dot"></span>Shortage — PE 50µm</span></td>
-              <td class="muted">—</td><td class="muted">—</td>
-              <td><span class="status-badge danger"><span class="dot"></span>Blocked</span></td>
+              <td class="mono">#1011</td><td>Sugar Pouch</td><td>Madhur Sugars</td><td>30,000 pcs</td><td class="muted">19 Aug</td><td class="muted">MH-12-AB-3391</td>
+              <td><span class="status-badge success"><span class="dot"></span>Delivered</span></td>
             </tr>
             <tr class="row-link" onclick="location.href='order-detail.html'">
-              <td class="mono">#1029</td><td>Protein Pouch</td><td>32,000</td>
-              <td><span class="status-badge success"><span class="dot"></span>Available</span></td>
-              <td class="muted">26 Aug</td><td class="muted">P-01</td>
-              <td><span class="status-badge info"><span class="dot"></span>Ready to Schedule</span></td>
+              <td class="mono">#1006</td><td>Roll-fed Label</td><td>GlowSoft Cosmetics</td><td>18,000 m</td><td class="muted">18 Aug</td><td class="muted">MH-14-CD-7742</td>
+              <td><span class="status-badge info"><span class="dot"></span>In Transit</span></td>
             </tr>
             <tr class="row-link" onclick="location.href='order-detail.html'">
-              <td class="mono">#1031</td><td>Turmeric Pouch</td><td>28,000</td>
-              <td><span class="status-badge warning"><span class="dot"></span>Checking</span></td>
-              <td class="muted">—</td><td class="muted">—</td>
-              <td><span class="status-badge neutral"><span class="dot"></span>Awaiting Materials</span></td>
+              <td class="mono">#1002</td><td>Laminated Packaging Roll</td><td>MedCure Pharma</td><td>1,800 KG</td><td class="muted">17 Aug</td><td class="muted">MH-04-EF-1187</td>
+              <td><span class="status-badge danger"><span class="dot"></span>Delivery Issue — Short Receipt</span></td>
             </tr>
             <tr class="row-link" onclick="location.href='order-detail.html'">
-              <td class="mono">#1032</td><td>Namkeen Pouch</td><td>45,000</td>
-              <td><span class="status-badge success"><span class="dot"></span>Available</span></td>
-              <td class="muted">27 Aug</td><td class="muted">L-02</td>
-              <td><span class="status-badge success"><span class="dot"></span>Scheduled</span></td>
+              <td class="mono">#1028</td><td>Side Gusset Pouch</td><td>AgroChem Fertilizers</td><td>18,000 pcs</td><td class="muted">—</td><td class="muted">—</td>
+              <td><span class="status-badge neutral"><span class="dot"></span>Awaiting QC Sign-off</span></td>
             </tr>
             <tr class="row-link" onclick="location.href='order-detail.html'">
-              <td class="mono">#1033</td><td>Pickle Pouch</td><td>15,000</td>
-              <td><span class="status-badge success"><span class="dot"></span>Available</span></td>
-              <td class="muted">28 Aug</td><td class="muted">P-02</td>
-              <td><span class="status-badge success"><span class="dot"></span>Scheduled</span></td>
+              <td class="mono">#0994</td><td>Shrink Wrap Film</td><td>Zenith Beverages</td><td>2,200 KG</td><td class="muted">14 Aug</td><td class="muted">MH-20-GH-5563</td>
+              <td><span class="status-badge success"><span class="dot"></span>Delivered</span></td>
             </tr>
           </tbody>
         </table>
+      </div>
+
+      <div class="alert danger">
+        <span class="icon" style="width:18px;height:18px;border-radius:6px;background:var(--danger);flex:none;"></span>
+        <div>
+          <div class="a-title">Order #1002 — short receipt reported by MedCure Pharma</div>
+          <div class="a-body">Customer reports 40 KG short on a 1,800 KG roll dispatch. Logged as a delivery issue for follow-up.</div>
+        </div>
       </div>
 
     </div>

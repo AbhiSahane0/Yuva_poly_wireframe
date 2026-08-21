@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>FactoryOS — Quotations</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="quotation" data-title="Quotations" data-breadcrumb="Commercial">
+<div class="app-shell">
+  <div class="sidebar">
+  <div class="sidebar-logo"><div class="mark"></div><div class="word">FactoryOS</div></div>
+  <div class="nav-scroll">
+    <div class="nav-list">
+      <a class="nav-item" href="index.html"><span class="icon"></span>Overview</a>
+    </div>
+    <div><div class="nav-group-label">Commercial</div><div class="nav-list">
+      <a class="nav-item" href="orders.html"><span class="icon"></span>Orders</a>
+      <a class="nav-item active" href="quotation.html"><span class="icon"></span>Quotations</a>
+    </div></div>
+    <div><div class="nav-group-label">Production</div><div class="nav-list">
+      <a class="nav-item" href="planning.html"><span class="icon"></span>Planning</a>
+      <a class="nav-item" href="production.html"><span class="icon"></span>Production</a>
+      <a class="nav-item" href="product-master.html"><span class="icon"></span>Product Master</a>
+      <a class="nav-item" href="design-cylinder.html"><span class="icon"></span>Design & Cylinders</a>
+    </div></div>
+    <div><div class="nav-group-label">Materials</div><div class="nav-list">
+      <a class="nav-item" href="inventory.html"><span class="icon"></span>Inventory</a>
+      <a class="nav-item" href="warehouse.html"><span class="icon"></span>Warehouse</a>
+      <a class="nav-item" href="purchase.html"><span class="icon"></span>Purchase & Suppliers</a>
+    </div></div>
+    <div><div class="nav-group-label">Control</div><div class="nav-list">
+      <a class="nav-item" href="quality-waste.html"><span class="icon"></span>Quality & Waste</a>
+    </div></div>
+    <div><div class="nav-group-label">Resources</div><div class="nav-list">
+      <a class="nav-item" href="machines.html"><span class="icon"></span>Machines</a>
+      <a class="nav-item" href="employees.html"><span class="icon"></span>Employees</a>
+      <a class="nav-item" href="machines.html"><span class="icon"></span>Maintenance</a>
+    </div></div>
+    <div><div class="nav-group-label">Dispatch</div><div class="nav-list">
+      <a class="nav-item" href="dispatch.html"><span class="icon"></span>Dispatch</a>
+    </div></div>
+    <div><div class="nav-group-label">Insights</div><div class="nav-list">
+      <a class="nav-item" href="reports.html"><span class="icon"></span>Reports</a>
+    </div></div>
+  </div>
+  <div class="sidebar-footer"><a class="nav-item" href="#"><span class="icon"></span>Settings</a></div>
+</div>
+  <div class="main">
+    <div class="header">
+  <div class="header-titles">
+    <div class="header-breadcrumb">Commercial</div>
+    <div class="header-title">Quotations</div>
+  </div>
+  <div class="header-search"><span class="icon"></span>Search orders, materials, machines...</div>
+  <div class="header-right">
+    <div class="header-icon-btn">⌕</div>
+    <div class="header-icon-btn">🔔<span class="dot"></span></div>
+    <div class="header-avatar">AD</div>
+  </div>
+</div>
+    <div class="content">
+
+      <div class="content-header">
+        <div class="content-heading">
+          <h1>Quotations</h1>
+          <p>Rate-driven, automated costing for every customer requirement — before it becomes an order.</p>
+        </div>
+        <button class="btn btn-primary">+ New Quotation</button>
+      </div>
+
+      <div class="summary-strip" style="grid-template-columns:repeat(4,1fr);">
+        <div class="summary-chip"><div class="n">4</div><div class="l">Draft</div></div>
+        <div class="summary-chip"><div class="n">6</div><div class="l">Sent</div></div>
+        <div class="summary-chip"><div class="n" style="color:var(--success)">18</div><div class="l">Won</div></div>
+        <div class="summary-chip"><div class="n" style="color:var(--danger)">5</div><div class="l">Lost</div></div>
+      </div>
+
+      <div class="table-wrap">
+        <table class="table">
+          <thead><tr><th>Quotation</th><th>Customer</th><th>Product</th><th>Quantity</th><th>Cost Estimate</th><th>Quoted Price</th><th>Margin</th><th>Status</th><th>Date</th></tr></thead>
+          <tbody>
+            <tr class="row-link" onclick="location.href='order-detail.html'">
+              <td class="mono">QT-3051</td><td>Krishna Dairy</td><td>Stand-up Pouch</td><td>100,000 pcs</td><td class="muted">₹120,000</td><td>₹142,000</td><td class="muted">15.5%</td>
+              <td><span class="status-badge success"><span class="dot"></span>Won → #1024</span></td><td class="muted">10 Aug</td>
+            </tr>
+            <tr>
+              <td class="mono">QT-3052</td><td>Nutrimax Ltd.</td><td>Protein Pouch</td><td>32,000 pcs</td><td class="muted">₹49,600</td><td>₹58,400</td><td class="muted">15.1%</td>
+              <td><span class="status-badge info"><span class="dot"></span>Sent</span></td><td class="muted">15 Aug</td>
+            </tr>
+            <tr>
+              <td class="mono">QT-3053</td><td>Everest Foods</td><td>Spice Pouch</td><td>50,000 pcs</td><td class="muted">₹60,800</td><td>₹71,000</td><td class="muted">14.4%</td>
+              <td><span class="status-badge neutral"><span class="dot"></span>Draft</span></td><td class="muted">17 Aug</td>
+            </tr>
+            <tr>
+              <td class="mono">QT-3040</td><td>ColorMax Paints</td><td>Shrink Sleeve</td><td>25,000 pcs</td><td class="muted">₹29,200</td><td>₹33,750</td><td class="muted">13.5%</td>
+              <td><span class="status-badge success"><span class="dot"></span>Won → #1022</span></td><td class="muted">2 Aug</td>
+            </tr>
+            <tr>
+              <td class="mono">QT-3021</td><td>PetroMax Chemicals</td><td>Industrial Bag</td><td>8,000 pcs</td><td class="muted">₹84,000</td><td>₹96,000</td><td class="muted">12.5%</td>
+              <td><span class="status-badge danger"><span class="dot"></span>Lost</span></td><td class="muted">22 Jul</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="grid-2">
+        <div class="card">
+          <div class="card-title" style="margin-bottom:14px;">Quotation Builder — QT-3053 (Draft)</div>
+          <div class="col" style="gap:10px;">
+            <div class="row" style="justify-content:space-between;"><span class="muted">Material (PET + PE, 50,000 pcs)</span><span style="font-weight:600;">₹42,500</span></div>
+            <div class="row" style="justify-content:space-between;"><span class="muted">Ink</span><span style="font-weight:600;">₹6,200</span></div>
+            <div class="row" style="justify-content:space-between;"><span class="muted">Adhesive</span><span style="font-weight:600;">₹2,800</span></div>
+            <div class="row" style="justify-content:space-between;"><span class="muted">Cylinder (amortized)</span><span style="font-weight:600;">₹1,900</span></div>
+            <div class="row" style="justify-content:space-between;"><span class="muted">Labour</span><span style="font-weight:600;">₹4,100</span></div>
+            <div class="row" style="justify-content:space-between;"><span class="muted">Machine</span><span style="font-weight:600;">₹2,600</span></div>
+            <div class="row" style="justify-content:space-between;"><span class="muted">Overheads</span><span style="font-weight:600;">₹700</span></div>
+            <div class="row" style="justify-content:space-between;border-top:1px solid var(--border-default);padding-top:10px;"><span style="font-weight:700;">Total Estimated Cost</span><span style="font-weight:700;">₹60,800</span></div>
+            <div class="row" style="justify-content:space-between;"><span class="muted">Margin (target 14–16%)</span><span style="font-weight:600;color:var(--success);">14.4%</span></div>
+            <div class="row" style="justify-content:space-between;background:var(--primary-bg);border-radius:8px;padding:10px 12px;"><span style="font-weight:700;color:var(--primary);">Quoted Price</span><span style="font-weight:800;color:var(--primary);">₹71,000</span></div>
+            <div class="btn-row" style="margin-top:6px;">
+              <button class="btn btn-secondary">Save Draft</button>
+              <button class="btn btn-primary">Send to Customer</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-title" style="margin-bottom:14px;">Current Rate Card (reference)</div>
+          <div class="table-wrap" style="box-shadow:none;">
+            <table class="table">
+              <thead><tr><th>Material</th><th>Rate</th></tr></thead>
+              <tbody>
+                <tr><td>PET 12µm</td><td>₹210/KG</td></tr>
+                <tr><td>PE 50µm</td><td>₹185/KG</td></tr>
+                <tr><td>Ink</td><td>₹640/KG</td></tr>
+                <tr><td>Adhesive — PU</td><td>₹480/KG</td></tr>
+                <tr><td>Cylinder Engraving</td><td>₹18,000–₹22,000 / set</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="muted" style="font-size:12px;margin-top:12px;">Rates update from Purchase &amp; Suppliers — every new quotation pulls the latest confirmed rate automatically.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+<script src="shell.js"></script>
+</body>
+</html>

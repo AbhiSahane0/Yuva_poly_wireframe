@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>FactoryOS — Design &amp; Cylinder Management</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="design-cylinder" data-title="Design & Cylinder Management" data-breadcrumb="Production">
+<div class="app-shell">
+  <div class="sidebar">
+  <div class="sidebar-logo"><div class="mark"></div><div class="word">FactoryOS</div></div>
+  <div class="nav-scroll">
+    <div class="nav-list">
+      <a class="nav-item" href="index.html"><span class="icon"></span>Overview</a>
+    </div>
+    <div><div class="nav-group-label">Commercial</div><div class="nav-list">
+      <a class="nav-item" href="orders.html"><span class="icon"></span>Orders</a>
+      <a class="nav-item" href="quotation.html"><span class="icon"></span>Quotations</a>
+    </div></div>
+    <div><div class="nav-group-label">Production</div><div class="nav-list">
+      <a class="nav-item" href="planning.html"><span class="icon"></span>Planning</a>
+      <a class="nav-item" href="production.html"><span class="icon"></span>Production</a>
+      <a class="nav-item" href="product-master.html"><span class="icon"></span>Product Master</a>
+      <a class="nav-item active" href="design-cylinder.html"><span class="icon"></span>Design & Cylinders</a>
+    </div></div>
+    <div><div class="nav-group-label">Materials</div><div class="nav-list">
+      <a class="nav-item" href="inventory.html"><span class="icon"></span>Inventory</a>
+      <a class="nav-item" href="warehouse.html"><span class="icon"></span>Warehouse</a>
+      <a class="nav-item" href="purchase.html"><span class="icon"></span>Purchase & Suppliers</a>
+    </div></div>
+    <div><div class="nav-group-label">Control</div><div class="nav-list">
+      <a class="nav-item" href="quality-waste.html"><span class="icon"></span>Quality & Waste</a>
+    </div></div>
+    <div><div class="nav-group-label">Resources</div><div class="nav-list">
+      <a class="nav-item" href="machines.html"><span class="icon"></span>Machines</a>
+      <a class="nav-item" href="employees.html"><span class="icon"></span>Employees</a>
+      <a class="nav-item" href="machines.html"><span class="icon"></span>Maintenance</a>
+    </div></div>
+    <div><div class="nav-group-label">Dispatch</div><div class="nav-list">
+      <a class="nav-item" href="dispatch.html"><span class="icon"></span>Dispatch</a>
+    </div></div>
+    <div><div class="nav-group-label">Insights</div><div class="nav-list">
+      <a class="nav-item" href="reports.html"><span class="icon"></span>Reports</a>
+    </div></div>
+  </div>
+  <div class="sidebar-footer"><a class="nav-item" href="#"><span class="icon"></span>Settings</a></div>
+</div>
+  <div class="main">
+    <div class="header">
+  <div class="header-titles">
+    <div class="header-breadcrumb">Production</div>
+    <div class="header-title">Design & Cylinder Management</div>
+  </div>
+  <div class="header-search"><span class="icon"></span>Search orders, materials, machines...</div>
+  <div class="header-right">
+    <div class="header-icon-btn">⌕</div>
+    <div class="header-icon-btn">🔔<span class="dot"></span></div>
+    <div class="header-avatar">AD</div>
+  </div>
+</div>
+    <div class="content">
+
+      <div class="content-header">
+        <div class="content-heading">
+          <h1>Design &amp; Cylinder Management</h1>
+          <p>Every Rotogravure print job runs off a design and its engraved cylinders — track ownership, storage, cost, and reuse.</p>
+        </div>
+        <button class="btn btn-primary">+ Register Design</button>
+      </div>
+
+      <div class="summary-strip" style="grid-template-columns:repeat(4,1fr);">
+        <div class="summary-chip"><div class="n">64</div><div class="l">Total Designs</div></div>
+        <div class="summary-chip"><div class="n">218</div><div class="l">Total Cylinders</div></div>
+        <div class="summary-chip"><div class="n">31</div><div class="l">Cylinders In Use</div></div>
+        <div class="summary-chip"><div class="n" style="color:var(--danger)">2</div><div class="l">Damaged / Needs Rework</div></div>
+      </div>
+
+      <div class="table-wrap">
+        <table class="table">
+          <thead><tr><th>Design</th><th>Customer</th><th>Product</th><th>Cylinders</th><th>Colors</th><th>Storage</th><th>Owner</th><th>Cost</th><th>Status</th></tr></thead>
+          <tbody>
+            <tr class="row-link">
+              <td class="mono">DSG-2041</td><td>Krishna Dairy</td><td class="muted">Bottom Gusset Stand-up Pouch</td><td class="muted">CYL-3301 – 3304</td><td class="muted">4 Colors</td><td class="muted">Cylinder Store A-1</td>
+              <td><span class="status-badge neutral"><span class="dot"></span>Customer-Owned</span></td><td class="muted">₹85,000</td>
+              <td><span class="status-badge success"><span class="dot"></span>Active</span></td>
+            </tr>
+            <tr class="row-link">
+              <td class="mono">DSG-2038</td><td>Sunrise Beverages</td><td class="muted">Center Sealed Pouch</td><td class="muted">CYL-3280 – 3283</td><td class="muted">4 Colors</td><td class="muted">Cylinder Store A-1</td>
+              <td><span class="status-badge info"><span class="dot"></span>Yuva-Owned</span></td><td class="muted">₹78,000</td>
+              <td><span class="status-badge success"><span class="dot"></span>Active</span></td>
+            </tr>
+            <tr class="row-link">
+              <td class="mono">DSG-2015</td><td>ColorMax Paints</td><td class="muted">Shrink Sleeve</td><td class="muted">CYL-3190 – 3192</td><td class="muted">3 Colors</td><td class="muted">Cylinder Store A-2</td>
+              <td><span class="status-badge neutral"><span class="dot"></span>Customer-Owned</span></td><td class="muted">₹62,000</td>
+              <td><span class="status-badge danger"><span class="dot"></span>Damaged</span></td>
+            </tr>
+            <tr class="row-link">
+              <td class="mono">DSG-1998</td><td>GlowSoft Cosmetics</td><td class="muted">Roll-fed Label</td><td class="muted">CYL-3150, 3151</td><td class="muted">2 Colors</td><td class="muted">Cylinder Store A-2</td>
+              <td><span class="status-badge info"><span class="dot"></span>Yuva-Owned</span></td><td class="muted">₹41,000</td>
+              <td><span class="status-badge success"><span class="dot"></span>Active</span></td>
+            </tr>
+            <tr class="row-link">
+              <td class="mono">DSG-1976</td><td>MedCure Pharma</td><td class="muted">Laminated Packaging Roll</td><td class="muted">CYL-3102 – 3105</td><td class="muted">4 Colors</td><td class="muted">Cylinder Store A-1</td>
+              <td><span class="status-badge neutral"><span class="dot"></span>Customer-Owned</span></td><td class="muted">₹91,000</td>
+              <td><span class="status-badge success"><span class="dot"></span>Active</span></td>
+            </tr>
+            <tr class="row-link">
+              <td class="mono">DSG-1940</td><td>StyleWear Garments</td><td class="muted">Garment Polybag</td><td class="muted">CYL-3050, 3051</td><td class="muted">2 Colors</td><td class="muted">Cylinder Store A-3</td>
+              <td><span class="status-badge info"><span class="dot"></span>Yuva-Owned</span></td><td class="muted">₹36,000</td>
+              <td><span class="status-badge warning"><span class="dot"></span>Needs Rework</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="card-title">Cylinder History — CYL-3301</div>
+      <div class="table-wrap">
+        <table class="table">
+          <thead><tr><th>Date</th><th>Event</th><th>Job</th><th>Remarks</th></tr></thead>
+          <tbody>
+            <tr><td class="muted">2 Aug</td><td>Engraved / Created</td><td class="mono">Design DSG-2041</td><td class="muted">New 4-colour set engraved for Krishna Dairy stand-up pouch</td></tr>
+            <tr><td class="muted">12 Aug</td><td>Allocated</td><td class="mono">#1024</td><td class="muted">Mounted for job #1024 on RG-02</td></tr>
+            <tr><td class="muted">13 Aug</td><td>In Use</td><td class="mono">#1024</td><td class="muted">Running — 100,000 pcs planned</td></tr>
+            <tr><td class="muted">16 Aug</td><td>Returned to Store</td><td class="mono">#1024</td><td class="muted">Job printing stage complete, cylinder cleaned &amp; stored</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </div>
+</div>
+<script src="shell.js"></script>
+</body>
+</html>

@@ -12,17 +12,22 @@
   <div class="sidebar-logo"><div class="mark"></div><div class="word">FactoryOS</div></div>
   <div class="nav-scroll">
     <div class="nav-list">
-      <a class="nav-item" href="dashboard.html"><span class="icon"></span>Overview</a>
+      <a class="nav-item" href="index.html"><span class="icon"></span>Overview</a>
     </div>
-    <div><div class="nav-group-label">Operations</div><div class="nav-list">
+    <div><div class="nav-group-label">Commercial</div><div class="nav-list">
       <a class="nav-item" href="orders.html"><span class="icon"></span>Orders</a>
-      <a class="nav-item" href="production.html"><span class="icon"></span>Production</a>
+      <a class="nav-item" href="quotation.html"><span class="icon"></span>Quotations</a>
+    </div></div>
+    <div><div class="nav-group-label">Production</div><div class="nav-list">
       <a class="nav-item" href="planning.html"><span class="icon"></span>Planning</a>
-      <a class="nav-item" href="dashboard.html"><span class="icon"></span>Ongoing Production</a>
+      <a class="nav-item" href="production.html"><span class="icon"></span>Production</a>
+      <a class="nav-item" href="product-master.html"><span class="icon"></span>Product Master</a>
+      <a class="nav-item" href="design-cylinder.html"><span class="icon"></span>Design & Cylinders</a>
     </div></div>
     <div><div class="nav-group-label">Materials</div><div class="nav-list">
       <a class="nav-item" href="inventory.html"><span class="icon"></span>Inventory</a>
       <a class="nav-item" href="warehouse.html"><span class="icon"></span>Warehouse</a>
+      <a class="nav-item" href="purchase.html"><span class="icon"></span>Purchase & Suppliers</a>
     </div></div>
     <div><div class="nav-group-label">Control</div><div class="nav-list">
       <a class="nav-item" href="quality-waste.html"><span class="icon"></span>Quality & Waste</a>
@@ -31,6 +36,9 @@
       <a class="nav-item" href="machines.html"><span class="icon"></span>Machines</a>
       <a class="nav-item" href="employees.html"><span class="icon"></span>Employees</a>
       <a class="nav-item" href="machines.html"><span class="icon"></span>Maintenance</a>
+    </div></div>
+    <div><div class="nav-group-label">Dispatch</div><div class="nav-list">
+      <a class="nav-item" href="dispatch.html"><span class="icon"></span>Dispatch</a>
     </div></div>
     <div><div class="nav-group-label">Insights</div><div class="nav-list">
       <a class="nav-item active" href="reports.html"><span class="icon"></span>Reports</a>
@@ -56,7 +64,16 @@
       <div class="content-header">
         <div class="content-heading">
           <h1>Reports</h1>
-          <p>Standard reports across production, inventory, and cost.</p>
+          <p>Standard reports across commercial, production, inventory, and cost.</p>
+        </div>
+      </div>
+
+      <div class="col" style="gap:14px;">
+        <div class="card-title">Commercial &amp; Profitability</div>
+        <div class="grid-3">
+          <div class="item-card"><div class="ic-title">Quotation vs Actual</div><div class="ic-sub">Quoted price vs actual cost, per job</div><div class="btn-row" style="margin-top:4px;"><a class="btn btn-secondary" href="quotation.html">View Report</a><button class="btn btn-ghost">Export</button></div></div>
+          <div class="item-card"><div class="ic-title">Profitability by Customer</div><div class="ic-sub">Expected vs actual margin by customer &amp; product</div><div class="btn-row" style="margin-top:4px;"><button class="btn btn-secondary">View Report</button><button class="btn btn-ghost">Export</button></div></div>
+          <div class="item-card"><div class="ic-title">Order Conversion</div><div class="ic-sub">Quotation win rate by customer &amp; category</div><div class="btn-row" style="margin-top:4px;"><button class="btn btn-secondary">View Report</button><button class="btn btn-ghost">Export</button></div></div>
         </div>
       </div>
 
@@ -75,6 +92,8 @@
           <div class="item-card"><div class="ic-title">Material Consumption</div><div class="ic-sub">Expected vs actual usage by material</div><div class="btn-row" style="margin-top:4px;"><button class="btn btn-secondary">View Report</button><button class="btn btn-ghost">Export</button></div></div>
           <div class="item-card"><div class="ic-title">Production Cost</div><div class="ic-sub">Cost breakdown by order and product</div><div class="btn-row" style="margin-top:4px;"><button class="btn btn-secondary">View Report</button><button class="btn btn-ghost">Export</button></div></div>
           <div class="item-card"><div class="ic-title">Inventory Valuation</div><div class="ic-sub">Stock value by category and warehouse</div><div class="btn-row" style="margin-top:4px;"><button class="btn btn-secondary">View Report</button><button class="btn btn-ghost">Export</button></div></div>
+          <div class="item-card"><div class="ic-title">Supplier Rate History</div><div class="ic-sub">Rate trend by supplier and material</div><div class="btn-row" style="margin-top:4px;"><a class="btn btn-secondary" href="purchase.html">View Report</a><button class="btn btn-ghost">Export</button></div></div>
+          <div class="item-card"><div class="ic-title">Cylinder Utilization</div><div class="ic-sub">Cylinder cost, reuse rate, and idle time</div><div class="btn-row" style="margin-top:4px;"><a class="btn btn-secondary" href="design-cylinder.html">View Report</a><button class="btn btn-ghost">Export</button></div></div>
         </div>
       </div>
 

@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>FactoryOS — Product Master</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="styles.css">
+<style>
+  .op-chip{ display:inline-flex; align-items:center; padding:2px 8px; border-radius:6px; font-size:11px; font-weight:700; background:var(--gray-100); color:var(--text-secondary); margin:2px 4px 2px 0; }
+  .op-chip.off{ background:transparent; color:var(--text-tertiary); text-decoration:line-through; border:1px dashed var(--border-default); }
+</style>
+</head>
+<body data-page="product-master" data-title="Product Master" data-breadcrumb="Production">
+<div class="app-shell">
+  <div class="sidebar">
+  <div class="sidebar-logo"><div class="mark"></div><div class="word">FactoryOS</div></div>
+  <div class="nav-scroll">
+    <div class="nav-list">
+      <a class="nav-item" href="index.html"><span class="icon"></span>Overview</a>
+    </div>
+    <div><div class="nav-group-label">Commercial</div><div class="nav-list">
+      <a class="nav-item" href="orders.html"><span class="icon"></span>Orders</a>
+      <a class="nav-item" href="quotation.html"><span class="icon"></span>Quotations</a>
+    </div></div>
+    <div><div class="nav-group-label">Production</div><div class="nav-list">
+      <a class="nav-item" href="planning.html"><span class="icon"></span>Planning</a>
+      <a class="nav-item" href="production.html"><span class="icon"></span>Production</a>
+      <a class="nav-item active" href="product-master.html"><span class="icon"></span>Product Master</a>
+      <a class="nav-item" href="design-cylinder.html"><span class="icon"></span>Design & Cylinders</a>
+    </div></div>
+    <div><div class="nav-group-label">Materials</div><div class="nav-list">
+      <a class="nav-item" href="inventory.html"><span class="icon"></span>Inventory</a>
+      <a class="nav-item" href="warehouse.html"><span class="icon"></span>Warehouse</a>
+      <a class="nav-item" href="purchase.html"><span class="icon"></span>Purchase & Suppliers</a>
+    </div></div>
+    <div><div class="nav-group-label">Control</div><div class="nav-list">
+      <a class="nav-item" href="quality-waste.html"><span class="icon"></span>Quality & Waste</a>
+    </div></div>
+    <div><div class="nav-group-label">Resources</div><div class="nav-list">
+      <a class="nav-item" href="machines.html"><span class="icon"></span>Machines</a>
+      <a class="nav-item" href="employees.html"><span class="icon"></span>Employees</a>
+      <a class="nav-item" href="machines.html"><span class="icon"></span>Maintenance</a>
+    </div></div>
+    <div><div class="nav-group-label">Dispatch</div><div class="nav-list">
+      <a class="nav-item" href="dispatch.html"><span class="icon"></span>Dispatch</a>
+    </div></div>
+    <div><div class="nav-group-label">Insights</div><div class="nav-list">
+      <a class="nav-item" href="reports.html"><span class="icon"></span>Reports</a>
+    </div></div>
+  </div>
+  <div class="sidebar-footer"><a class="nav-item" href="#"><span class="icon"></span>Settings</a></div>
+</div>
+  <div class="main">
+    <div class="header">
+  <div class="header-titles">
+    <div class="header-breadcrumb">Production</div>
+    <div class="header-title">Product Master</div>
+  </div>
+  <div class="header-search"><span class="icon"></span>Search orders, materials, machines...</div>
+  <div class="header-right">
+    <div class="header-icon-btn">⌕</div>
+    <div class="header-icon-btn">🔔<span class="dot"></span></div>
+    <div class="header-avatar">AD</div>
+  </div>
+</div>
+    <div class="content">
+
+      <div class="content-header">
+        <div class="content-heading">
+          <h1>Product Master</h1>
+          <p>Configurable product catalog — every product defines its own material structure and required operations. Not every job follows the same workflow.</p>
+        </div>
+        <div class="btn-row">
+          <button class="btn btn-secondary">+ Add Category</button>
+          <button class="btn btn-primary">+ Add Product</button>
+        </div>
+      </div>
+
+      <div class="filter-bar">
+        <div class="filter-chip" style="background:var(--primary-bg);color:var(--primary);border-color:transparent;font-weight:700;">All Categories</div>
+        <div class="filter-chip">Flexible Packaging</div>
+        <div class="filter-chip">Labels</div>
+        <div class="filter-chip">Multilayer &amp; Barrier Films</div>
+        <div class="filter-chip">General Flexibles</div>
+        <div class="spacer"></div>
+        <div class="search-box"><span class="icon"></span>Search products...</div>
+      </div>
+
+      <div class="table-wrap">
+        <table class="table">
+          <thead><tr><th>Product</th><th>Category</th><th>Type</th><th>Material Structure</th><th>Required Operations</th><th>Status</th></tr></thead>
+          <tbody>
+            <tr class="row-link" onclick="location.href='order-detail.html'">
+              <td>Bottom Gusset Stand-up Pouch</td><td class="muted">Flexible Packaging</td><td class="muted">Stand-up Pouch</td><td class="muted">PET 12µm + PE 50µm</td>
+              <td><span class="op-chip">Printing</span><span class="op-chip">Lamination</span><span class="op-chip">Slitting</span><span class="op-chip">Pouch Making</span></td>
+              <td><span class="status-badge success"><span class="dot"></span>Active</span></td>
+            </tr>
+            <tr>
+              <td>Center Sealed Pouch</td><td class="muted">Flexible Packaging</td><td class="muted">Center Seal Pouch</td><td class="muted">PET 12µm + PE 50µm</td>
+              <td><span class="op-chip">Printing</span><span class="op-chip">Lamination</span><span class="op-chip">Slitting</span><span class="op-chip">Pouch Making</span></td>
+              <td><span class="status-badge success"><span class="dot"></span>Active</span></td>
+            </tr>
+            <tr>
+              <td>Three-Side Seal Pouch</td><td class="muted">Flexible Packaging</td><td class="muted">3-Side Seal Pouch</td><td class="muted">PET 12µm + PE 50µm</td>
+              <td><span class="op-chip">Printing</span><span class="op-chip">Lamination</span><span class="op-chip">Slitting</span><span class="op-chip">Pouch Making</span></td>
+              <td><span class="status-badge success"><span class="dot"></span>Active</span></td>
+            </tr>
+            <tr>
+              <td>Side Gusset Pouch</td><td class="muted">Flexible Packaging</td><td class="muted">Side Gusset Pouch</td><td class="muted">PET 12µm + PE 50µm</td>
+              <td><span class="op-chip">Printing</span><span class="op-chip">Lamination</span><span class="op-chip">Slitting</span><span class="op-chip">Pouch Making</span></td>
+              <td><span class="status-badge success"><span class="dot"></span>Active</span></td>
+            </tr>
+            <tr>
+              <td>Spout Pouch</td><td class="muted">Flexible Packaging</td><td class="muted">Spout / Shaped Pouch</td><td class="muted">PET 12µm + PE 60µm</td>
+              <td><span class="op-chip">Printing</span><span class="op-chip">Lamination</span><span class="op-chip">Slitting</span><span class="op-chip">Pouch Making</span></td>
+              <td><span class="status-badge success"><span class="dot"></span>Active</span></td>
+            </tr>
+            <tr>
+              <td>Laminated Packaging Roll</td><td class="muted">Flexible Packaging</td><td class="muted">Roll Stock</td><td class="muted">PET 12µm + PE 50µm</td>
+              <td><span class="op-chip">Printing</span><span class="op-chip">Lamination</span><span class="op-chip">Slitting</span><span class="op-chip off">Pouch Making</span></td>
+              <td><span class="status-badge success"><span class="dot"></span>Active</span></td>
+            </tr>
+            <tr>
+              <td>Lid Laminate</td><td class="muted">Flexible Packaging</td><td class="muted">Lid Film</td><td class="muted">PET 12µm + Foil 7µm</td>
+              <td><span class="op-chip">Printing</span><span class="op-chip">Lamination</span><span class="op-chip">Slitting</span><span class="op-chip off">Pouch Making</span></td>
+              <td><span class="status-badge success"><span class="dot"></span>Active</span></td>
+            </tr>
+            <tr>
+              <td>Roll-fed Label</td><td class="muted">Labels</td><td class="muted">Label</td><td class="muted">PET 40µm (single layer)</td>
+              <td><span class="op-chip">Printing</span><span class="op-chip off">Lamination</span><span class="op-chip">Slitting</span><span class="op-chip off">Pouch Making</span></td>
+              <td><span class="status-badge success"><span class="dot"></span>Active</span></td>
+            </tr>
+            <tr>
+              <td>Shrink Sleeve</td><td class="muted">Labels</td><td class="muted">Sleeve</td><td class="muted">PVC / PETG 45µm</td>
+              <td><span class="op-chip">Printing</span><span class="op-chip off">Lamination</span><span class="op-chip">Slitting</span><span class="op-chip off">Pouch Making</span></td>
+              <td><span class="status-badge success"><span class="dot"></span>Active</span></td>
+            </tr>
+            <tr>
+              <td>Stretch Sleeve</td><td class="muted">Labels</td><td class="muted">Sleeve</td><td class="muted">POF 40µm</td>
+              <td><span class="op-chip">Printing</span><span class="op-chip off">Lamination</span><span class="op-chip">Slitting</span><span class="op-chip off">Pouch Making</span></td>
+              <td><span class="status-badge neutral"><span class="dot"></span>Draft</span></td>
+            </tr>
+            <tr>
+              <td>Shrink Wrap Film</td><td class="muted">Multilayer &amp; Barrier Films</td><td class="muted">Wrap Film</td><td class="muted">LDPE 60µm</td>
+              <td><span class="op-chip off">Printing</span><span class="op-chip off">Lamination</span><span class="op-chip">Slitting</span><span class="op-chip off">Pouch Making</span></td>
+              <td><span class="status-badge success"><span class="dot"></span>Active</span></td>
+            </tr>
+            <tr>
+              <td>Dairy Pouch Film (Roll Stock)</td><td class="muted">Multilayer &amp; Barrier Films</td><td class="muted">Roll Stock</td><td class="muted">PE Multilayer 90µm</td>
+              <td><span class="op-chip">Printing</span><span class="op-chip">Lamination</span><span class="op-chip">Slitting</span><span class="op-chip off">Pouch Making</span></td>
+              <td><span class="status-badge success"><span class="dot"></span>Active</span></td>
+            </tr>
+            <tr>
+              <td>Garment Polybag</td><td class="muted">General Flexibles</td><td class="muted">Polybag</td><td class="muted">LDPE 50µm</td>
+              <td><span class="op-chip off">Printing</span><span class="op-chip off">Lamination</span><span class="op-chip">Slitting</span><span class="op-chip">Pouch Making</span></td>
+              <td><span class="status-badge success"><span class="dot"></span>Active</span></td>
+            </tr>
+            <tr>
+              <td>Industrial Bag</td><td class="muted">General Flexibles</td><td class="muted">Bag</td><td class="muted">PP Woven + PE Liner</td>
+              <td><span class="op-chip off">Printing</span><span class="op-chip">Lamination</span><span class="op-chip">Slitting</span><span class="op-chip">Pouch Making</span></td>
+              <td><span class="status-badge success"><span class="dot"></span>Active</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="alert" style="background:var(--primary-bg);border-color:transparent;">
+        <span class="icon" style="width:18px;height:18px;border-radius:6px;background:var(--primary);flex:none;"></span>
+        <div>
+          <div class="a-title">Why this matters</div>
+          <div class="a-body">Each product defines its own workflow — a Laminated Roll skips Pouch Making, a Roll-fed Label skips Lamination, an Industrial Bag skips Printing. When a job is created against a product, the ERP should only present the stages that product actually requires.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+<script src="shell.js"></script>
+</body>
+</html>
