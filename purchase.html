@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>FactoryOS — Purchase &amp; Suppliers</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="purchase" data-title="Purchase & Suppliers" data-breadcrumb="Materials">
+<div class="app-shell">
+  <div class="sidebar">
+  <div class="sidebar-logo"><div class="mark"></div><div class="word">FactoryOS</div></div>
+  <div class="nav-scroll">
+    <div class="nav-list">
+      <a class="nav-item" href="index.html"><span class="icon"></span>Overview</a>
+    </div>
+    <div><div class="nav-group-label">Commercial</div><div class="nav-list">
+      <a class="nav-item" href="orders.html"><span class="icon"></span>Orders</a>
+      <a class="nav-item" href="quotation.html"><span class="icon"></span>Quotations</a>
+    </div></div>
+    <div><div class="nav-group-label">Production</div><div class="nav-list">
+      <a class="nav-item" href="planning.html"><span class="icon"></span>Planning</a>
+      <a class="nav-item" href="production.html"><span class="icon"></span>Production</a>
+      <a class="nav-item" href="product-master.html"><span class="icon"></span>Product Master</a>
+      <a class="nav-item" href="design-cylinder.html"><span class="icon"></span>Design & Cylinders</a>
+    </div></div>
+    <div><div class="nav-group-label">Materials</div><div class="nav-list">
+      <a class="nav-item" href="inventory.html"><span class="icon"></span>Inventory</a>
+      <a class="nav-item" href="warehouse.html"><span class="icon"></span>Warehouse</a>
+      <a class="nav-item active" href="purchase.html"><span class="icon"></span>Purchase & Suppliers</a>
+    </div></div>
+    <div><div class="nav-group-label">Control</div><div class="nav-list">
+      <a class="nav-item" href="quality-waste.html"><span class="icon"></span>Quality & Waste</a>
+    </div></div>
+    <div><div class="nav-group-label">Resources</div><div class="nav-list">
+      <a class="nav-item" href="machines.html"><span class="icon"></span>Machines</a>
+      <a class="nav-item" href="employees.html"><span class="icon"></span>Employees</a>
+      <a class="nav-item" href="machines.html"><span class="icon"></span>Maintenance</a>
+    </div></div>
+    <div><div class="nav-group-label">Dispatch</div><div class="nav-list">
+      <a class="nav-item" href="dispatch.html"><span class="icon"></span>Dispatch</a>
+    </div></div>
+    <div><div class="nav-group-label">Insights</div><div class="nav-list">
+      <a class="nav-item" href="reports.html"><span class="icon"></span>Reports</a>
+    </div></div>
+  </div>
+  <div class="sidebar-footer"><a class="nav-item" href="#"><span class="icon"></span>Settings</a></div>
+</div>
+  <div class="main">
+    <div class="header">
+  <div class="header-titles">
+    <div class="header-breadcrumb">Materials</div>
+    <div class="header-title">Purchase & Suppliers</div>
+  </div>
+  <div class="header-search"><span class="icon"></span>Search orders, materials, machines...</div>
+  <div class="header-right">
+    <div class="header-icon-btn">⌕</div>
+    <div class="header-icon-btn">🔔<span class="dot"></span></div>
+    <div class="header-avatar">AD</div>
+  </div>
+</div>
+    <div class="content">
+
+      <div class="content-header">
+        <div class="content-heading">
+          <h1>Purchase &amp; Suppliers</h1>
+          <p>Raw material procurement, supplier rates, and pending receipts.</p>
+        </div>
+        <button class="btn btn-primary">+ New Purchase Order</button>
+      </div>
+
+      <div class="summary-strip" style="grid-template-columns:repeat(4,1fr);">
+        <div class="summary-chip"><div class="n">14</div><div class="l">Active Suppliers</div></div>
+        <div class="summary-chip"><div class="n">6</div><div class="l">Open Purchase Orders</div></div>
+        <div class="summary-chip"><div class="n" style="color:var(--warning)">3</div><div class="l">Pending Receipts</div></div>
+        <div class="summary-chip"><div class="n">₹9.2L</div><div class="l">Spend — This Month</div></div>
+      </div>
+
+      <div class="card-title">Suppliers</div>
+      <div class="table-wrap">
+        <table class="table">
+          <thead><tr><th>Supplier</th><th>Category</th><th>Materials Supplied</th><th>Last Rate</th><th>Status</th></tr></thead>
+          <tbody>
+            <tr><td>Polyfilm Industries</td><td class="muted">Films</td><td class="muted">PET 12µm, PET 19µm</td><td class="muted">₹210/KG</td><td><span class="status-badge success"><span class="dot"></span>Active</span></td></tr>
+            <tr><td>Reliance Polymers</td><td class="muted">Films</td><td class="muted">PE 50µm, PE 60µm</td><td class="muted">₹185/KG</td><td><span class="status-badge success"><span class="dot"></span>Active</span></td></tr>
+            <tr><td>ChromaInk Pvt. Ltd.</td><td class="muted">Ink</td><td class="muted">Cyan, Magenta, Yellow, Black</td><td class="muted">₹640/KG</td><td><span class="status-badge success"><span class="dot"></span>Active</span></td></tr>
+            <tr><td>BondTech Adhesives</td><td class="muted">Adhesive</td><td class="muted">PU Adhesive</td><td class="muted">₹480/KG</td><td><span class="status-badge warning"><span class="dot"></span>Rate Under Review</span></td></tr>
+            <tr><td>Precision Cylinders Co.</td><td class="muted">Cylinder Engraving</td><td class="muted">Gravure Cylinders</td><td class="muted">₹18,000–22,000/set</td><td><span class="status-badge success"><span class="dot"></span>Active</span></td></tr>
+            <tr><td>SolventPure Chemicals</td><td class="muted">Solvents</td><td class="muted">Ethyl Acetate</td><td class="muted">₹96/L</td><td><span class="status-badge success"><span class="dot"></span>Active</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="card-title">Purchase Orders</div>
+      <div class="table-wrap">
+        <table class="table">
+          <thead><tr><th>PO</th><th>Supplier</th><th>Material</th><th>Quantity</th><th>Rate</th><th>Total</th><th>Order Date</th><th>Expected</th><th>Status</th></tr></thead>
+          <tbody>
+            <tr class="row-link" onclick="location.href='inventory.html'">
+              <td class="mono">PO-4488</td><td>Polyfilm Industries</td><td>PET 12µm</td><td>400 KG</td><td class="muted">₹210/KG</td><td>₹84,000</td><td class="muted">17 Aug</td><td class="muted">21 Aug</td>
+              <td><span class="status-badge info"><span class="dot"></span>In Transit</span></td>
+            </tr>
+            <tr class="row-link" onclick="location.href='inventory.html'">
+              <td class="mono">PO-4491</td><td>Reliance Polymers</td><td>PE 50µm</td><td>1,200 KG</td><td class="muted">₹185/KG</td><td>₹2,22,000</td><td class="muted">18 Aug</td><td class="muted">23 Aug</td>
+              <td><span class="status-badge warning"><span class="dot"></span>Delayed</span></td>
+            </tr>
+            <tr class="row-link" onclick="location.href='inventory.html'">
+              <td class="mono">PO-4495</td><td>BondTech Adhesives</td><td>Adhesive — PU</td><td>300 KG</td><td class="muted">₹480/KG</td><td>₹1,44,000</td><td class="muted">19 Aug</td><td class="muted">25 Aug</td>
+              <td><span class="status-badge neutral"><span class="dot"></span>Ordered</span></td>
+            </tr>
+            <tr class="row-link" onclick="location.href='inventory.html'">
+              <td class="mono">PO-4471</td><td>ChromaInk Pvt. Ltd.</td><td>Ink — Cyan</td><td>150 KG</td><td class="muted">₹640/KG</td><td>₹96,000</td><td class="muted">10 Aug</td><td class="muted">14 Aug</td>
+              <td><span class="status-badge success"><span class="dot"></span>Received</span></td>
+            </tr>
+            <tr class="row-link" onclick="location.href='design-cylinder.html'">
+              <td class="mono">PO-4480</td><td>Precision Cylinders Co.</td><td>Cylinder Set — DSG-2041</td><td>4 cylinders</td><td class="muted">₹85,000</td><td>₹85,000</td><td class="muted">2 Aug</td><td class="muted">12 Aug</td>
+              <td><span class="status-badge success"><span class="dot"></span>Received</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </div>
+</div>
+<script src="shell.js"></script>
+</body>
+</html>

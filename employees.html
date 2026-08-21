@@ -12,17 +12,22 @@
   <div class="sidebar-logo"><div class="mark"></div><div class="word">FactoryOS</div></div>
   <div class="nav-scroll">
     <div class="nav-list">
-      <a class="nav-item" href="dashboard.html"><span class="icon"></span>Overview</a>
+      <a class="nav-item" href="index.html"><span class="icon"></span>Overview</a>
     </div>
-    <div><div class="nav-group-label">Operations</div><div class="nav-list">
+    <div><div class="nav-group-label">Commercial</div><div class="nav-list">
       <a class="nav-item" href="orders.html"><span class="icon"></span>Orders</a>
-      <a class="nav-item" href="production.html"><span class="icon"></span>Production</a>
+      <a class="nav-item" href="quotation.html"><span class="icon"></span>Quotations</a>
+    </div></div>
+    <div><div class="nav-group-label">Production</div><div class="nav-list">
       <a class="nav-item" href="planning.html"><span class="icon"></span>Planning</a>
-      <a class="nav-item" href="dashboard.html"><span class="icon"></span>Ongoing Production</a>
+      <a class="nav-item" href="production.html"><span class="icon"></span>Production</a>
+      <a class="nav-item" href="product-master.html"><span class="icon"></span>Product Master</a>
+      <a class="nav-item" href="design-cylinder.html"><span class="icon"></span>Design & Cylinders</a>
     </div></div>
     <div><div class="nav-group-label">Materials</div><div class="nav-list">
       <a class="nav-item" href="inventory.html"><span class="icon"></span>Inventory</a>
       <a class="nav-item" href="warehouse.html"><span class="icon"></span>Warehouse</a>
+      <a class="nav-item" href="purchase.html"><span class="icon"></span>Purchase & Suppliers</a>
     </div></div>
     <div><div class="nav-group-label">Control</div><div class="nav-list">
       <a class="nav-item" href="quality-waste.html"><span class="icon"></span>Quality & Waste</a>
@@ -31,6 +36,9 @@
       <a class="nav-item" href="machines.html"><span class="icon"></span>Machines</a>
       <a class="nav-item active" href="employees.html"><span class="icon"></span>Employees</a>
       <a class="nav-item" href="machines.html"><span class="icon"></span>Maintenance</a>
+    </div></div>
+    <div><div class="nav-group-label">Dispatch</div><div class="nav-list">
+      <a class="nav-item" href="dispatch.html"><span class="icon"></span>Dispatch</a>
     </div></div>
     <div><div class="nav-group-label">Insights</div><div class="nav-list">
       <a class="nav-item" href="reports.html"><span class="icon"></span>Reports</a>
@@ -73,25 +81,25 @@
           <thead><tr><th>Employee</th><th>Role</th><th>Shift</th><th>Current Machine</th><th>Current Order</th><th>Status</th></tr></thead>
           <tbody>
             <tr class="row-link" onclick="location.href='machines.html'">
-              <td>Rahul</td><td class="muted">Printing Operator</td><td class="muted">Morning</td><td>Printing #1</td><td class="mono">#1024</td><td><span class="status-badge success"><span class="dot"></span>Working</span></td>
+              <td>Rahul</td><td class="muted">Rotogravure Operator</td><td class="muted">Morning</td><td>RG-02</td><td class="mono">#1024</td><td><span class="status-badge success"><span class="dot"></span>Working</span></td>
             </tr>
             <tr class="row-link" onclick="location.href='machines.html'">
-              <td>Amit</td><td class="muted">Printing Operator</td><td class="muted">Morning</td><td>Printing #2</td><td class="mono">#1027</td><td><span class="status-badge success"><span class="dot"></span>Working</span></td>
+              <td>Amit</td><td class="muted">Rotogravure Operator</td><td class="muted">Morning</td><td>RG-01</td><td class="mono">#1027</td><td><span class="status-badge success"><span class="dot"></span>Working</span></td>
             </tr>
             <tr class="row-link" onclick="location.href='machines.html'">
-              <td>Suresh</td><td class="muted">Lamination Operator</td><td class="muted">Morning</td><td>Lamination #1</td><td class="mono">#1019</td><td><span class="status-badge success"><span class="dot"></span>Working</span></td>
+              <td>Suresh</td><td class="muted">Lamination Operator</td><td class="muted">Morning</td><td>L-01</td><td class="mono">#1019</td><td><span class="status-badge success"><span class="dot"></span>Working</span></td>
             </tr>
             <tr class="row-link" onclick="location.href='machines.html'">
-              <td>Vijay</td><td class="muted">Lamination Operator</td><td class="muted">Morning</td><td>Lamination #2</td><td class="mono">#1022</td><td><span class="status-badge success"><span class="dot"></span>Working</span></td>
+              <td>Vijay</td><td class="muted">Lamination Operator</td><td class="muted">Morning</td><td>L-02</td><td class="mono">#1022</td><td><span class="status-badge success"><span class="dot"></span>Working</span></td>
             </tr>
             <tr class="row-link" onclick="location.href='machines.html'">
-              <td>Manoj</td><td class="muted">Slitting Operator</td><td class="muted">Morning</td><td>Slitting #1</td><td class="mono">#1015</td><td><span class="status-badge success"><span class="dot"></span>Working</span></td>
+              <td>Manoj</td><td class="muted">Slitting Operator</td><td class="muted">Morning</td><td>S-01</td><td class="mono">#1015</td><td><span class="status-badge success"><span class="dot"></span>Working</span></td>
             </tr>
             <tr class="row-link" onclick="location.href='machines.html'">
-              <td>Prakash</td><td class="muted">Slitting Operator</td><td class="muted">Morning</td><td>Slitting #2</td><td class="mono">#1020</td><td><span class="status-badge success"><span class="dot"></span>Working</span></td>
+              <td>Prakash</td><td class="muted">Slitting Operator</td><td class="muted">Morning</td><td>S-02</td><td class="mono">#1020</td><td><span class="status-badge success"><span class="dot"></span>Working</span></td>
             </tr>
             <tr class="row-link" onclick="location.href='machines.html'">
-              <td>Rakesh</td><td class="muted">Pouching Operator</td><td class="muted">Morning</td><td>Pouching #3</td><td class="mono">#1018</td><td><span class="status-badge success"><span class="dot"></span>Working</span></td>
+              <td>Rakesh</td><td class="muted">Pouch Making Operator</td><td class="muted">Morning</td><td>PM-03</td><td class="mono">#1018</td><td><span class="status-badge success"><span class="dot"></span>Working</span></td>
             </tr>
             <tr>
               <td>Priya Sharma</td><td class="muted">Production Supervisor</td><td class="muted">Morning</td><td class="muted">—</td><td class="muted">Floor</td><td><span class="status-badge success"><span class="dot"></span>Working</span></td>

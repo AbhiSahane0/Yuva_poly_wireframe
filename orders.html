@@ -6,23 +6,28 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="styles.css">
 </head>
-<body data-page="orders" data-title="Orders" data-breadcrumb="Operations">
+<body data-page="orders" data-title="Orders" data-breadcrumb="Commercial">
 <div class="app-shell">
   <div class="sidebar">
   <div class="sidebar-logo"><div class="mark"></div><div class="word">FactoryOS</div></div>
   <div class="nav-scroll">
     <div class="nav-list">
-      <a class="nav-item" href="dashboard.html"><span class="icon"></span>Overview</a>
+      <a class="nav-item" href="index.html"><span class="icon"></span>Overview</a>
     </div>
-    <div><div class="nav-group-label">Operations</div><div class="nav-list">
+    <div><div class="nav-group-label">Commercial</div><div class="nav-list">
       <a class="nav-item active" href="orders.html"><span class="icon"></span>Orders</a>
-      <a class="nav-item" href="production.html"><span class="icon"></span>Production</a>
+      <a class="nav-item" href="quotation.html"><span class="icon"></span>Quotations</a>
+    </div></div>
+    <div><div class="nav-group-label">Production</div><div class="nav-list">
       <a class="nav-item" href="planning.html"><span class="icon"></span>Planning</a>
-      <a class="nav-item" href="dashboard.html"><span class="icon"></span>Ongoing Production</a>
+      <a class="nav-item" href="production.html"><span class="icon"></span>Production</a>
+      <a class="nav-item" href="product-master.html"><span class="icon"></span>Product Master</a>
+      <a class="nav-item" href="design-cylinder.html"><span class="icon"></span>Design & Cylinders</a>
     </div></div>
     <div><div class="nav-group-label">Materials</div><div class="nav-list">
       <a class="nav-item" href="inventory.html"><span class="icon"></span>Inventory</a>
       <a class="nav-item" href="warehouse.html"><span class="icon"></span>Warehouse</a>
+      <a class="nav-item" href="purchase.html"><span class="icon"></span>Purchase & Suppliers</a>
     </div></div>
     <div><div class="nav-group-label">Control</div><div class="nav-list">
       <a class="nav-item" href="quality-waste.html"><span class="icon"></span>Quality & Waste</a>
@@ -31,6 +36,9 @@
       <a class="nav-item" href="machines.html"><span class="icon"></span>Machines</a>
       <a class="nav-item" href="employees.html"><span class="icon"></span>Employees</a>
       <a class="nav-item" href="machines.html"><span class="icon"></span>Maintenance</a>
+    </div></div>
+    <div><div class="nav-group-label">Dispatch</div><div class="nav-list">
+      <a class="nav-item" href="dispatch.html"><span class="icon"></span>Dispatch</a>
     </div></div>
     <div><div class="nav-group-label">Insights</div><div class="nav-list">
       <a class="nav-item" href="reports.html"><span class="icon"></span>Reports</a>
@@ -41,7 +49,7 @@
   <div class="main">
     <div class="header">
   <div class="header-titles">
-    <div class="header-breadcrumb">Operations</div>
+    <div class="header-breadcrumb">Commercial</div>
     <div class="header-title">Orders</div>
   </div>
   <div class="header-search"><span class="icon"></span>Search orders, materials, machines...</div>
@@ -77,30 +85,30 @@
 
       <div class="table-wrap">
         <table class="table">
-          <thead><tr><th>Order</th><th>Customer</th><th>Product</th><th>Quantity</th><th>Order Date</th><th>Due Date</th><th>Status</th></tr></thead>
+          <thead><tr><th>Order</th><th>Customer</th><th>Product</th><th>Product Type</th><th>Design</th><th>Quantity</th><th>Order Date</th><th>Due Date</th><th>Status</th></tr></thead>
           <tbody>
             <tr class="row-link" onclick="location.href='order-detail.html'">
-              <td class="mono">#1030</td><td>Everest Foods</td><td>Spice Pouch</td><td>50,000</td><td class="muted">18 Aug</td><td class="muted">5 Sep</td>
+              <td class="mono">#1030</td><td>Everest Foods</td><td>Spice Pouch</td><td class="muted">Stand-up Pouch</td><td class="muted">DSG-2050 (new)</td><td>50,000</td><td class="muted">18 Aug</td><td class="muted">5 Sep</td>
               <td><span class="status-badge warning"><span class="dot"></span>Pending Materials</span></td>
             </tr>
             <tr class="row-link" onclick="location.href='order-detail.html'">
-              <td class="mono">#1029</td><td>Nutrimax Ltd.</td><td>Protein Pouch</td><td>32,000</td><td class="muted">17 Aug</td><td class="muted">3 Sep</td>
+              <td class="mono">#1029</td><td>Nutrimax Ltd.</td><td>Protein Pouch</td><td class="muted">Center Seal Pouch</td><td class="muted">DSG-2049 (new)</td><td>32,000</td><td class="muted">17 Aug</td><td class="muted">3 Sep</td>
               <td><span class="status-badge warning"><span class="dot"></span>Pending Materials</span></td>
             </tr>
             <tr class="row-link" onclick="location.href='order-detail.html'">
-              <td class="mono">#1028</td><td>CleanCo</td><td>Detergent Pouch</td><td>18,000</td><td class="muted">10 Aug</td><td class="muted">22 Aug</td>
+              <td class="mono">#1028</td><td>AgroChem Fertilizers</td><td>Side Gusset Pouch</td><td class="muted">Side Gusset Pouch</td><td class="muted">DSG-1985</td><td>18,000</td><td class="muted">10 Aug</td><td class="muted">22 Aug</td>
               <td><span class="status-badge neutral"><span class="dot"></span>Awaiting QC</span></td>
             </tr>
             <tr class="row-link" onclick="location.href='order-detail.html'">
-              <td class="mono">#1024</td><td>ABC Foods</td><td>500g Masala Pouch</td><td>100,000</td><td class="muted">12 Aug</td><td class="muted">30 Aug</td>
+              <td class="mono">#1024</td><td>Krishna Dairy</td><td>Bottom Gusset Stand-up Pouch</td><td class="muted">Stand-up Pouch</td><td class="muted"><a href="design-cylinder.html" style="color:var(--primary);font-weight:700;">DSG-2041</a></td><td>100,000</td><td class="muted">12 Aug</td><td class="muted">30 Aug</td>
               <td><span class="status-badge info"><span class="dot"></span>In Production</span></td>
             </tr>
             <tr class="row-link" onclick="location.href='order-detail.html'">
-              <td class="mono">#1019</td><td>Blue Bean Co.</td><td>Coffee Pouch</td><td>60,000</td><td class="muted">6 Aug</td><td class="muted">28 Aug</td>
+              <td class="mono">#1019</td><td>MedCure Pharma</td><td>Laminated Packaging Roll</td><td class="muted">Roll Stock</td><td class="muted">DSG-1976</td><td>2,400 KG</td><td class="muted">6 Aug</td><td class="muted">28 Aug</td>
               <td><span class="status-badge info"><span class="dot"></span>In Production</span></td>
             </tr>
             <tr class="row-link" onclick="location.href='order-detail.html'">
-              <td class="mono">#1011</td><td>Madhur Sugars</td><td>Sugar Pouch</td><td>30,000</td><td class="muted">28 Jul</td><td class="muted">18 Aug</td>
+              <td class="mono">#1011</td><td>Madhur Sugars</td><td>Sugar Pouch</td><td class="muted">Stand-up Pouch</td><td class="muted">DSG-1902</td><td>30,000</td><td class="muted">28 Jul</td><td class="muted">18 Aug</td>
               <td><span class="status-badge success"><span class="dot"></span>Completed</span></td>
             </tr>
           </tbody>

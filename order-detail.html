@@ -2,27 +2,32 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>FactoryOS — Production Order #1024</title>
+<title>FactoryOS — Job Card #1024</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="styles.css">
 </head>
-<body data-page="production" data-title="Production Order #1024" data-breadcrumb="Production / Orders">
+<body data-page="production" data-title="Job Card #1024" data-breadcrumb="Production / Orders">
 <div class="app-shell">
   <div class="sidebar">
   <div class="sidebar-logo"><div class="mark"></div><div class="word">FactoryOS</div></div>
   <div class="nav-scroll">
     <div class="nav-list">
-      <a class="nav-item" href="dashboard.html"><span class="icon"></span>Overview</a>
+      <a class="nav-item" href="index.html"><span class="icon"></span>Overview</a>
     </div>
-    <div><div class="nav-group-label">Operations</div><div class="nav-list">
+    <div><div class="nav-group-label">Commercial</div><div class="nav-list">
       <a class="nav-item" href="orders.html"><span class="icon"></span>Orders</a>
-      <a class="nav-item active" href="production.html"><span class="icon"></span>Production</a>
+      <a class="nav-item" href="quotation.html"><span class="icon"></span>Quotations</a>
+    </div></div>
+    <div><div class="nav-group-label">Production</div><div class="nav-list">
       <a class="nav-item" href="planning.html"><span class="icon"></span>Planning</a>
-      <a class="nav-item" href="dashboard.html"><span class="icon"></span>Ongoing Production</a>
+      <a class="nav-item active" href="production.html"><span class="icon"></span>Production</a>
+      <a class="nav-item" href="product-master.html"><span class="icon"></span>Product Master</a>
+      <a class="nav-item" href="design-cylinder.html"><span class="icon"></span>Design & Cylinders</a>
     </div></div>
     <div><div class="nav-group-label">Materials</div><div class="nav-list">
       <a class="nav-item" href="inventory.html"><span class="icon"></span>Inventory</a>
       <a class="nav-item" href="warehouse.html"><span class="icon"></span>Warehouse</a>
+      <a class="nav-item" href="purchase.html"><span class="icon"></span>Purchase & Suppliers</a>
     </div></div>
     <div><div class="nav-group-label">Control</div><div class="nav-list">
       <a class="nav-item" href="quality-waste.html"><span class="icon"></span>Quality & Waste</a>
@@ -31,6 +36,9 @@
       <a class="nav-item" href="machines.html"><span class="icon"></span>Machines</a>
       <a class="nav-item" href="employees.html"><span class="icon"></span>Employees</a>
       <a class="nav-item" href="machines.html"><span class="icon"></span>Maintenance</a>
+    </div></div>
+    <div><div class="nav-group-label">Dispatch</div><div class="nav-list">
+      <a class="nav-item" href="dispatch.html"><span class="icon"></span>Dispatch</a>
     </div></div>
     <div><div class="nav-group-label">Insights</div><div class="nav-list">
       <a class="nav-item" href="reports.html"><span class="icon"></span>Reports</a>
@@ -42,7 +50,7 @@
     <div class="header">
   <div class="header-titles">
     <div class="header-breadcrumb">Production / Orders</div>
-    <div class="header-title">Production Order #1024</div>
+    <div class="header-title">Job Card #1024</div>
   </div>
   <div class="header-search"><span class="icon"></span>Search orders, materials, machines...</div>
   <div class="header-right">
@@ -55,8 +63,8 @@
 
       <div class="content-header">
         <div class="content-heading">
-          <h1>Production Order #1024</h1>
-          <p>500g Masala Pouch · Customer: ABC Foods · Quantity: 100,000 pcs · Due: 30 Aug 2026</p>
+          <h1>Job Card — Order #1024</h1>
+          <p>Bottom Gusset Stand-up Pouch · Customer: Krishna Dairy · Quantity: 100,000 pcs · Due: 30 Aug 2026</p>
         </div>
         <div class="btn-row">
           <span class="status-badge info" style="height:34px;"><span class="dot"></span>In Production</span>
@@ -81,7 +89,7 @@
           </div>
           <div class="timeline-step">
             <div class="timeline-marker-col"><div class="timeline-dot complete">✓</div><div class="timeline-line"></div></div>
-            <div class="timeline-content"><div class="timeline-label">Printing</div><div class="timeline-sub">Completed on 16 Aug · Machine P-02</div></div>
+            <div class="timeline-content"><div class="timeline-label">Rotogravure Printing</div><div class="timeline-sub">Completed on 16 Aug · Machine RG-02</div></div>
           </div>
           <div class="timeline-step">
             <div class="timeline-marker-col"><div class="timeline-dot active">●</div><div class="timeline-line"></div></div>
@@ -123,11 +131,15 @@
           <div class="grid-2">
             <div class="col">
               <div class="field-label">Product</div>
-              <div class="field-value">500g Masala Pouch</div>
+              <div class="field-value">Bottom Gusset Stand-up Pouch</div>
             </div>
             <div class="col">
               <div class="field-label">Layer Structure</div>
               <div class="field-value">PET 12 micron + PE 50 micron</div>
+            </div>
+            <div class="col">
+              <div class="field-label">Design / Cylinder</div>
+              <a class="field-value" href="design-cylinder.html" style="color:var(--primary);">DSG-2041 · CYL-3301–3304</a>
             </div>
             <div class="col">
               <div class="field-label">Order Quantity</div>
@@ -153,6 +165,10 @@
               <div class="field-label">Assigned Supervisor</div>
               <div class="field-value">Priya Sharma</div>
             </div>
+            <div class="col">
+              <div class="field-label">Linked Quotation</div>
+              <a class="field-value" href="quotation.html" style="color:var(--primary);">QT-3051</a>
+            </div>
           </div>
           <div class="col" style="margin-top:6px;">
             <div class="field-label">Production Progress</div>
@@ -165,13 +181,15 @@
 
         <!-- PRODUCTION -->
         <div class="tab-panel" id="tab-production">
-          <div class="card-title">Production Log</div>
+          <div class="card-title">Job Card — Stage Log</div>
           <div class="table-wrap">
             <table class="table">
-              <thead><tr><th>Stage</th><th>Machine</th><th>Operator</th><th>Start</th><th>End</th><th>Output</th><th>Waste</th></tr></thead>
+              <thead><tr><th>Stage</th><th>Machine</th><th>Operator</th><th>Input</th><th>Output</th><th>Waste</th><th>Time</th></tr></thead>
               <tbody>
-                <tr><td>Printing</td><td>P-02</td><td>Rahul</td><td class="muted">13 Aug, 08:00</td><td class="muted">16 Aug, 17:40</td><td>99,760 pcs</td><td class="muted">24 KG</td></tr>
-                <tr><td>Lamination</td><td>L-01</td><td>Rahul</td><td class="muted">17 Aug, 09:00</td><td class="muted">In progress</td><td>62,000 pcs</td><td class="muted">12 KG</td></tr>
+                <tr><td>Rotogravure Printing</td><td>RG-02</td><td>Rahul</td><td class="muted">890 KG</td><td>99,760 pcs</td><td class="muted">24 KG</td><td class="muted">3d 9h 40m</td></tr>
+                <tr><td>Lamination</td><td>L-01</td><td>Rahul</td><td class="muted">915 KG</td><td>62,000 pcs (so far)</td><td class="muted">12 KG</td><td class="muted">In progress</td></tr>
+                <tr><td class="muted">Slitting</td><td class="muted">—</td><td class="muted">—</td><td class="muted">—</td><td class="muted">—</td><td class="muted">—</td><td class="muted">Upcoming</td></tr>
+                <tr><td class="muted">Pouch Making</td><td class="muted">—</td><td class="muted">—</td><td class="muted">—</td><td class="muted">—</td><td class="muted">—</td><td class="muted">Upcoming</td></tr>
               </tbody>
             </table>
           </div>
@@ -253,10 +271,10 @@
             <table class="table">
               <thead><tr><th>Stage</th><th>Waste</th></tr></thead>
               <tbody>
-                <tr><td>Printing</td><td>24 KG</td></tr>
+                <tr><td>Rotogravure Printing</td><td>24 KG</td></tr>
                 <tr><td>Lamination</td><td>12 KG</td></tr>
                 <tr><td>Slitting</td><td class="muted">—</td></tr>
-                <tr><td>Pouching</td><td class="muted">—</td></tr>
+                <tr><td>Pouch Making</td><td class="muted">—</td></tr>
               </tbody>
             </table>
           </div>
