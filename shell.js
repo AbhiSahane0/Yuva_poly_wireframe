@@ -24,7 +24,7 @@ const NAV = [
   { group: "Resources", items: [
     { key: "machines", label: "Machines", href: "machines.html" },
     { key: "employees", label: "Employees", href: "employees.html" },
-    { key: "maintenance", label: "Maintenance", href: "machines.html" }
+    // { key: "maintenance", label: "Maintenance", href: "machines.html" }
   ]},
   { group: "Insights", items: [
     { key: "reports", label: "Reports", href: "reports.html" }
