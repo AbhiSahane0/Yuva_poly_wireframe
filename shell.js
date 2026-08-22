@@ -1,4 +1,4 @@
-/* FactoryOS — shared app shell helpers.
+/* Yuva Polyprint — shared app shell helpers.
    Sidebar + header are now baked directly into each page's HTML (so they
    render with zero JavaScript). This NAV map is kept only as the source of
    truth if a page ever needs regenerating, and renderSidebar/renderHeader
@@ -39,7 +39,7 @@ function renderSidebar(activeKey){
     <div class="sidebar">
       <div class="sidebar-logo">
         <div class="mark"></div>
-        <div class="word">FactoryOS</div>
+        <div class="word">Yuva Polyprint</div>
       </div>
       <div class="nav-scroll">`;
 
