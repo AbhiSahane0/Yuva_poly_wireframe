@@ -28,6 +28,7 @@
       <a class="nav-item" href="inventory.html"><span class="icon"></span>Inventory</a>
       <a class="nav-item" href="warehouse.html"><span class="icon"></span>Warehouse</a>
       <a class="nav-item" href="purchase.html"><span class="icon"></span>Purchase & Suppliers</a>
+      <a class="nav-item" href="rates.html"><span class="icon"></span>Rates Update</a>
     </div></div>
     <div><div class="nav-group-label">Control</div><div class="nav-list">
       <a class="nav-item" href="quality-waste.html"><span class="icon"></span>Quality & Waste</a>
@@ -66,7 +67,7 @@
           <h1>Production</h1>
           <p>Manage production orders and monitor the factory floor.</p>
         </div>
-        <a class="btn btn-primary" href="order-detail.html">+ Create Production Order</a>
+        <button class="btn btn-primary" onclick="openJobModal()">+ Create Production Order</button>
       </div>
 
       <div class="summary-strip">
@@ -136,11 +137,17 @@
               <td><div class="row" style="align-items:center;gap:8px;"><div class="progress" style="width:70px;"><span style="width:0%"></span></div><span class="muted">0%</span></div></td>
               <td class="muted">5 Sep</td><td><span class="status-badge neutral"><span class="dot"></span>Planned</span></td>
             </tr>
-            <tr class="row-link" onclick="location.href='order-detail.html'">
+            <tr class="row-link" onclick="location.href='order-1011.html'">
               <td class="mono">#1011</td><td>Sugar Pouch</td><td class="muted">Madhur Sugars</td><td>30,000</td>
               <td>Dispatch</td><td>—</td><td>—</td>
               <td><div class="row" style="align-items:center;gap:8px;"><div class="progress" style="width:70px;"><span style="width:100%"></span></div><span class="muted">100%</span></div></td>
               <td class="muted">18 Aug</td><td><span class="status-badge success"><span class="dot"></span>Completed</span></td>
+            </tr>
+            <tr class="row-link" onclick="location.href='order-0994.html'">
+              <td class="mono">#0994</td><td>Shrink Wrap Film</td><td class="muted">Zenith Beverages</td><td>2,200 KG</td>
+              <td>Dispatch</td><td>—</td><td>—</td>
+              <td><div class="row" style="align-items:center;gap:8px;"><div class="progress" style="width:70px;"><span style="width:100%"></span></div><span class="muted">100%</span></div></td>
+              <td class="muted">14 Aug</td><td><span class="status-badge success"><span class="dot"></span>Completed</span></td>
             </tr>
           </tbody>
         </table>
@@ -149,6 +156,195 @@
     </div>
   </div>
 </div>
+
+<!-- NEW JOB (PRODUCTION ORDER / JOB CARD) MODAL -->
+<div class="modal-preview" id="jobModal">
+  <div class="modal-box form-modal">
+    <div class="modal-box-header">
+      <div>
+        <h3>Create Production Order</h3>
+        <p>Pick an open customer order — the job card fields fill in automatically from that order, its product, and the factory floor. This is a preview form; nothing is saved.</p>
+      </div>
+      <button class="modal-close-btn" onclick="closeJobModal()">✕</button>
+    </div>
+
+    <form onsubmit="submitJobModal(event)">
+      <div class="form-grid">
+        <div class="form-group span-2">
+          <label class="form-label">Customer Order</label>
+          <select class="form-select" id="jOrder" onchange="onJobOrderChange()" required>
+            <option value="">Select an open order…</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Customer <span class="auto-tag">Auto</span></label>
+          <div class="form-static empty" id="jCustomer">—</div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Product <span class="auto-tag">Auto</span></label>
+          <div class="form-static empty" id="jProduct">—</div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Quantity <span class="auto-tag">Auto</span></label>
+          <div class="form-static empty" id="jQty">—</div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Design / Cylinder <span class="auto-tag">Auto</span></label>
+          <div class="form-static empty" id="jDesign">—</div>
+        </div>
+
+        <div class="form-group span-2">
+          <label class="form-label">Required Operations <span class="auto-tag">Auto — from Product Master</span></label>
+          <div class="form-chip-row" id="jOps"><span class="form-note">Select an order to see its workflow</span></div>
+        </div>
+
+        <div class="form-group span-2">
+          <label class="form-label" id="jMaterialLabel">Material Status <span class="auto-tag">Auto — from Planning</span></label>
+          <div class="form-static empty" id="jMaterial">—</div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Assign Machine <span class="auto-tag">Auto-suggested</span></label>
+          <select class="form-select" id="jMachine" onchange="onJobMachineChange()">
+            <option value="">—</option>
+            <option>RG-01 (Rotogravure Printing)</option>
+            <option>RG-02 (Rotogravure Printing)</option>
+            <option>L-01 (Lamination)</option>
+            <option>L-02 (Lamination)</option>
+            <option>S-01 (Slitting)</option>
+            <option>S-02 (Slitting)</option>
+            <option>PM-03 (Pouch Making)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Assign Operator <span class="auto-tag">Auto-suggested</span></label>
+          <select class="form-select" id="jOperator">
+            <option value="">—</option>
+            <option>Amit</option>
+            <option>Rahul</option>
+            <option>Suresh</option>
+            <option>Vijay</option>
+            <option>Manoj</option>
+            <option>Prakash</option>
+            <option>Rakesh</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Planned Start</label>
+          <input class="form-input" type="date">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Priority</label>
+          <select class="form-select">
+            <option>Normal</option>
+            <option>Urgent</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Supervisor</label>
+          <select class="form-select">
+            <option>Priya Sharma</option>
+            <option>Rohit Mehta</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="modal-actions" style="margin-top:18px;">
+        <button type="button" class="btn btn-secondary" onclick="closeJobModal()">Cancel</button>
+        <button type="submit" class="btn btn-primary">Create Job Card</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="toast" id="toast"><span class="dot"></span><span id="toastMsg">Saved</span></div>
+
 <script src="shell.js"></script>
+<script>
+  const MACHINE_OPERATOR = {
+    "RG-01 (Rotogravure Printing)": "Amit",
+    "RG-02 (Rotogravure Printing)": "Rahul",
+    "L-01 (Lamination)": "Suresh",
+    "L-02 (Lamination)": "Vijay",
+    "S-01 (Slitting)": "Manoj",
+    "S-02 (Slitting)": "Prakash",
+    "PM-03 (Pouch Making)": "Rakesh"
+  };
+  const ALL_OPS = ["Printing","Lamination","Slitting","Pouch Making"];
+  const ORDER_JOBS = {
+    "#1030 — Everest Foods (Spice Pouch)": { customer:"Everest Foods", product:"Spice Pouch — Stand-up Pouch", qty:"50,000 pcs", design:"DSG-2050 (new — pending design approval)", ops:["Printing","Lamination","Slitting","Pouch Making"], machine:"RG-01 (Rotogravure Printing)", material:"Pending Material Allocation — awaiting confirmation in Planning" },
+    "#1029 — Nutrimax Ltd. (Protein Pouch)": { customer:"Nutrimax Ltd.", product:"Protein Pouch — Center Seal Pouch", qty:"32,000 pcs", design:"DSG-2049 (new — pending design approval)", ops:["Printing","Lamination","Slitting","Pouch Making"], machine:"RG-02 (Rotogravure Printing)", material:"Materials Available — ready to schedule" },
+    "#1031 — Spice Trail Foods (Turmeric Pouch)": { customer:"Spice Trail Foods", product:"Turmeric Pouch — Stand-up Pouch", qty:"28,000 pcs", design:"DSG-2051 (new — pending design approval)", ops:["Printing","Lamination","Slitting","Pouch Making"], machine:"RG-01 (Rotogravure Printing)", material:"Checking — material requirement in progress" },
+    "#1032 — Bikaner Snacks Co. (Namkeen Pouch)": { customer:"Bikaner Snacks Co.", product:"Namkeen Pouch — Side Gusset Pouch", qty:"45,000 pcs", design:"DSG-2052", ops:["Printing","Lamination","Slitting","Pouch Making"], machine:"L-02 (Lamination)", material:"Materials Available — Scheduled" },
+    "#1033 — Mother's Pickles (Pickle Pouch)": { customer:"Mother's Pickles", product:"Pickle Pouch — Stand-up Pouch", qty:"15,000 pcs", design:"DSG-2053", ops:["Printing","Lamination","Slitting","Pouch Making"], machine:"RG-02 (Rotogravure Printing)", material:"Materials Available — Scheduled" }
+  };
+
+  (function populateOrderSelect(){
+    const sel = document.getElementById("jOrder");
+    Object.keys(ORDER_JOBS).forEach(name => {
+      const opt = document.createElement("option");
+      opt.value = name; opt.textContent = name;
+      sel.appendChild(opt);
+    });
+  })();
+
+  function flash(el){ el.classList.remove("auto-fill-flash"); void el.offsetWidth; el.classList.add("auto-fill-flash"); }
+
+  function onJobOrderChange(){
+    const key = document.getElementById("jOrder").value;
+    const j = ORDER_JOBS[key];
+    const customer = document.getElementById("jCustomer");
+    const product = document.getElementById("jProduct");
+    const qty = document.getElementById("jQty");
+    const design = document.getElementById("jDesign");
+    const material = document.getElementById("jMaterial");
+    const opsRow = document.getElementById("jOps");
+    const machineSel = document.getElementById("jMachine");
+    if (!j){
+      [customer,product,qty,design,material].forEach(el => { el.textContent = "—"; el.classList.add("empty"); });
+      opsRow.innerHTML = '<span class="form-note">Select an order to see its workflow</span>';
+      machineSel.value = "";
+      document.getElementById("jOperator").value = "";
+      return;
+    }
+    customer.textContent = j.customer; customer.classList.remove("empty"); flash(customer);
+    product.textContent = j.product; product.classList.remove("empty"); flash(product);
+    qty.textContent = j.qty; qty.classList.remove("empty"); flash(qty);
+    design.textContent = j.design; design.classList.remove("empty"); flash(design);
+    material.textContent = j.material; material.classList.remove("empty"); flash(material);
+    opsRow.innerHTML = ALL_OPS.map(op => {
+      const on = j.ops.includes(op);
+      return `<span class="op-chip${on ? "" : " off"}">${op}</span>`;
+    }).join("");
+    flash(opsRow);
+    machineSel.value = j.machine;
+    onJobMachineChange();
+  }
+
+  function onJobMachineChange(){
+    const machine = document.getElementById("jMachine").value;
+    const opSel = document.getElementById("jOperator");
+    opSel.value = MACHINE_OPERATOR[machine] || "";
+    flash(opSel);
+  }
+
+  function openJobModal(){ document.getElementById("jobModal").classList.add("open"); }
+  function closeJobModal(){ document.getElementById("jobModal").classList.remove("open"); }
+  function submitJobModal(e){
+    e.preventDefault();
+    closeJobModal();
+    showToast("Job card created — routed to Production");
+  }
+  function showToast(msg){
+    const t = document.getElementById("toast");
+    document.getElementById("toastMsg").textContent = msg;
+    t.classList.add("show");
+    setTimeout(() => t.classList.remove("show"), 2600);
+  }
+</script>
 </body>
 </html>
