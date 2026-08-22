@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>FactoryOS — Rates Update</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="rates" data-title="Rates Update" data-breadcrumb="Materials">
+<div class="app-shell">
+  <div class="sidebar">
+  <div class="sidebar-logo"><div class="mark"></div><div class="word">FactoryOS</div></div>
+  <div class="nav-scroll">
+    <div class="nav-list">
+      <a class="nav-item" href="index.html"><span class="icon"></span>Overview</a>
+    </div>
+    <div><div class="nav-group-label">Commercial</div><div class="nav-list">
+      <a class="nav-item" href="orders.html"><span class="icon"></span>Orders</a>
+      <a class="nav-item" href="quotation.html"><span class="icon"></span>Quotations</a>
+    </div></div>
+    <div><div class="nav-group-label">Production</div><div class="nav-list">
+      <a class="nav-item" href="planning.html"><span class="icon"></span>Planning</a>
+      <a class="nav-item" href="production.html"><span class="icon"></span>Production</a>
+      <a class="nav-item" href="product-master.html"><span class="icon"></span>Product Master</a>
+      <a class="nav-item" href="design-cylinder.html"><span class="icon"></span>Design & Cylinders</a>
+    </div></div>
+    <div><div class="nav-group-label">Materials</div><div class="nav-list">
+      <a class="nav-item" href="inventory.html"><span class="icon"></span>Inventory</a>
+      <a class="nav-item" href="warehouse.html"><span class="icon"></span>Warehouse</a>
+      <a class="nav-item" href="purchase.html"><span class="icon"></span>Purchase & Suppliers</a>
+      <a class="nav-item active" href="rates.html"><span class="icon"></span>Rates Update</a>
+    </div></div>
+    <div><div class="nav-group-label">Control</div><div class="nav-list">
+      <a class="nav-item" href="quality-waste.html"><span class="icon"></span>Quality & Waste</a>
+    </div></div>
+    <div><div class="nav-group-label">Resources</div><div class="nav-list">
+      <a class="nav-item" href="machines.html"><span class="icon"></span>Machines</a>
+      <a class="nav-item" href="employees.html"><span class="icon"></span>Employees</a>
+      <a class="nav-item" href="machines.html"><span class="icon"></span>Maintenance</a>
+    </div></div>
+    <div><div class="nav-group-label">Dispatch</div><div class="nav-list">
+      <a class="nav-item" href="dispatch.html"><span class="icon"></span>Dispatch</a>
+    </div></div>
+    <div><div class="nav-group-label">Insights</div><div class="nav-list">
+      <a class="nav-item" href="reports.html"><span class="icon"></span>Reports</a>
+    </div></div>
+  </div>
+  <div class="sidebar-footer"><a class="nav-item" href="#"><span class="icon"></span>Settings</a></div>
+</div>
+  <div class="main">
+    <div class="header">
+  <div class="header-titles">
+    <div class="header-breadcrumb">Materials</div>
+    <div class="header-title">Rates Update</div>
+  </div>
+  <div class="header-search"><span class="icon"></span>Search orders, materials, machines...</div>
+  <div class="header-right">
+    <div class="header-icon-btn">⌕</div>
+    <div class="header-icon-btn">🔔<span class="dot"></span></div>
+    <div class="header-avatar">AD</div>
+  </div>
+</div>
+    <div class="content">
+
+      <div class="content-header">
+        <div class="content-heading">
+          <h1>Rates Update</h1>
+          <p>Enter today's raw material rates each morning. Every new quotation and job costing pulls from what's saved here.</p>
+        </div>
+        <button class="btn btn-primary" onclick="saveRates()">Save Today's Rates</button>
+      </div>
+
+      <div class="summary-strip" style="grid-template-columns:repeat(4,1fr);">
+        <div class="summary-chip"><div class="n" id="lastUpdatedChip">Today, 8:45 AM</div><div class="l">Last Updated</div></div>
+        <div class="summary-chip"><div class="n" style="font-size:16px;">Priya Sharma</div><div class="l">Updated By</div></div>
+        <div class="summary-chip"><div class="n">16</div><div class="l">Materials Tracked</div></div>
+        <div class="summary-chip"><div class="n" id="changedCountChip" style="color:var(--warning)">0</div><div class="l">Rates Changed Today</div></div>
+      </div>
+
+      <div class="alert" style="background:var(--primary-bg);border-color:transparent;">
+        <span class="icon" style="width:18px;height:18px;border-radius:6px;background:var(--primary);flex:none;"></span>
+        <div>
+          <div class="a-title">Manual entry for now — live feed coming later</div>
+          <div class="a-body">Today's rates are entered here each morning (by Priya or Admin). Once confirmed, they automatically apply to new Quotations, Purchase Orders, and Job Card costings. Phase 2: these rates will auto-refresh from a supplier / commodity-index API instead of manual entry.</div>
+        </div>
+      </div>
+
+      <div class="table-wrap">
+        <table class="table">
+          <thead><tr><th>Material</th><th>Category</th><th>Unit</th><th>Yesterday's Rate</th><th>Today's Rate</th><th>Change</th></tr></thead>
+          <tbody id="ratesBody">
+            <tr><td>PET 12µm</td><td class="muted">Film</td><td class="muted">₹/KG</td><td class="muted yesterday">210</td><td><input class="rate-input" type="number" value="210" data-yesterday="210"></td><td class="change">—</td></tr>
+            <tr><td>PET 19µm</td><td class="muted">Film</td><td class="muted">₹/KG</td><td class="muted yesterday">224</td><td><input class="rate-input" type="number" value="224" data-yesterday="224"></td><td class="change">—</td></tr>
+            <tr><td>PE 50µm</td><td class="muted">Film</td><td class="muted">₹/KG</td><td class="muted yesterday">185</td><td><input class="rate-input" type="number" value="185" data-yesterday="185"></td><td class="change">—</td></tr>
+            <tr><td>PE 60µm</td><td class="muted">Film</td><td class="muted">₹/KG</td><td class="muted yesterday">190</td><td><input class="rate-input" type="number" value="190" data-yesterday="190"></td><td class="change">—</td></tr>
+            <tr><td>LDPE 60µm</td><td class="muted">Film</td><td class="muted">₹/KG</td><td class="muted yesterday">178</td><td><input class="rate-input" type="number" value="178" data-yesterday="178"></td><td class="change">—</td></tr>
+            <tr><td>BOPP 20µm</td><td class="muted">Film</td><td class="muted">₹/KG</td><td class="muted yesterday">168</td><td><input class="rate-input" type="number" value="168" data-yesterday="168"></td><td class="change">—</td></tr>
+            <tr><td>Foil 7µm</td><td class="muted">Film</td><td class="muted">₹/KG</td><td class="muted yesterday">410</td><td><input class="rate-input" type="number" value="410" data-yesterday="410"></td><td class="change">—</td></tr>
+            <tr><td>PVC / PETG 45µm</td><td class="muted">Film</td><td class="muted">₹/KG</td><td class="muted yesterday">205</td><td><input class="rate-input" type="number" value="205" data-yesterday="205"></td><td class="change">—</td></tr>
+            <tr><td>POF 40µm</td><td class="muted">Film</td><td class="muted">₹/KG</td><td class="muted yesterday">198</td><td><input class="rate-input" type="number" value="198" data-yesterday="198"></td><td class="change">—</td></tr>
+            <tr><td>PP Woven</td><td class="muted">Film</td><td class="muted">₹/KG</td><td class="muted yesterday">165</td><td><input class="rate-input" type="number" value="165" data-yesterday="165"></td><td class="change">—</td></tr>
+            <tr><td>Ink — Cyan</td><td class="muted">Ink</td><td class="muted">₹/KG</td><td class="muted yesterday">640</td><td><input class="rate-input" type="number" value="640" data-yesterday="640"></td><td class="change">—</td></tr>
+            <tr><td>Ink — Magenta</td><td class="muted">Ink</td><td class="muted">₹/KG</td><td class="muted yesterday">640</td><td><input class="rate-input" type="number" value="640" data-yesterday="640"></td><td class="change">—</td></tr>
+            <tr><td>Ink — Yellow</td><td class="muted">Ink</td><td class="muted">₹/KG</td><td class="muted yesterday">635</td><td><input class="rate-input" type="number" value="635" data-yesterday="635"></td><td class="change">—</td></tr>
+            <tr><td>Ink — Black</td><td class="muted">Ink</td><td class="muted">₹/KG</td><td class="muted yesterday">610</td><td><input class="rate-input" type="number" value="610" data-yesterday="610"></td><td class="change">—</td></tr>
+            <tr><td>Adhesive — PU</td><td class="muted">Adhesive</td><td class="muted">₹/KG</td><td class="muted yesterday">480</td><td><input class="rate-input" type="number" value="480" data-yesterday="480"></td><td class="change">—</td></tr>
+            <tr><td>Solvent — Ethyl Acetate</td><td class="muted">Solvent</td><td class="muted">₹/L</td><td class="muted yesterday">96</td><td><input class="rate-input" type="number" value="96" data-yesterday="96"></td><td class="change">—</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="row" style="justify-content:flex-end;">
+        <button class="btn btn-primary" onclick="saveRates()">Save Today's Rates</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"><span class="dot"></span><span id="toastMsg">Saved</span></div>
+
+<script src="shell.js"></script>
+<script>
+  function saveRates(){
+    let changed = 0;
+    document.querySelectorAll("#ratesBody tr").forEach(row => {
+      const input = row.querySelector(".rate-input");
+      const yesterday = parseFloat(input.dataset.yesterday);
+      const today = parseFloat(input.value);
+      const changeCell = row.querySelector(".change");
+      if (today !== yesterday){
+        changed++;
+        const pct = (((today - yesterday) / yesterday) * 100).toFixed(1);
+        const up = today > yesterday;
+        changeCell.innerHTML = `<span class="delta ${up ? "pos" : "neg"}">${up ? "▲" : "▼"} ${Math.abs(pct)}%</span>`;
+        input.classList.add("changed");
+      } else {
+        changeCell.textContent = "—";
+        input.classList.remove("changed");
+      }
+    });
+    document.getElementById("changedCountChip").textContent = changed;
+    document.getElementById("lastUpdatedChip").textContent = "Just now";
+    showToast(changed > 0
+      ? `Today's rates saved — ${changed} material${changed > 1 ? "s" : ""} changed, applied to new quotations & job costings`
+      : "Today's rates confirmed — no changes from yesterday");
+  }
+  function showToast(msg){
+    const t = document.getElementById("toast");
+    document.getElementById("toastMsg").textContent = msg;
+    t.classList.add("show");
+    setTimeout(() => t.classList.remove("show"), 3200);
+  }
+</script>
+</body>
+</html>

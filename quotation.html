@@ -28,6 +28,7 @@
       <a class="nav-item" href="inventory.html"><span class="icon"></span>Inventory</a>
       <a class="nav-item" href="warehouse.html"><span class="icon"></span>Warehouse</a>
       <a class="nav-item" href="purchase.html"><span class="icon"></span>Purchase & Suppliers</a>
+      <a class="nav-item" href="rates.html"><span class="icon"></span>Rates Update</a>
     </div></div>
     <div><div class="nav-group-label">Control</div><div class="nav-list">
       <a class="nav-item" href="quality-waste.html"><span class="icon"></span>Quality & Waste</a>
@@ -66,7 +67,7 @@
           <h1>Quotations</h1>
           <p>Rate-driven, automated costing for every customer requirement — before it becomes an order.</p>
         </div>
-        <button class="btn btn-primary">+ New Quotation</button>
+        <button class="btn btn-primary" onclick="openQuotationModal()">+ New Quotation</button>
       </div>
 
       <div class="summary-strip" style="grid-template-columns:repeat(4,1fr);">
@@ -146,6 +147,179 @@
     </div>
   </div>
 </div>
+
+<!-- NEW QUOTATION MODAL -->
+<div class="modal-preview" id="quotationModal">
+  <div class="modal-box form-modal">
+    <div class="modal-box-header">
+      <div>
+        <h3>New Quotation</h3>
+        <p>Pick a customer and product — costing fields fill in automatically from the Product Master and today's rates. This is a preview form; nothing is saved.</p>
+      </div>
+      <button class="modal-close-btn" onclick="closeQuotationModal()">✕</button>
+    </div>
+
+    <form onsubmit="submitQuotationModal(event)">
+      <div class="form-grid">
+        <div class="form-group">
+          <label class="form-label">Customer</label>
+          <select class="form-select" required>
+            <option value="">Select customer…</option>
+            <option>Krishna Dairy</option>
+            <option>Sunrise Beverages</option>
+            <option>Nutrimax Ltd.</option>
+            <option>Everest Foods</option>
+            <option>ColorMax Paints</option>
+            <option>PetroMax Chemicals</option>
+            <option>GlowSoft Cosmetics</option>
+            <option>MedCure Pharma</option>
+            <option>Madhur Sugars</option>
+            <option>AgroChem Fertilizers</option>
+            <option>StyleWear Garments</option>
+            <option>PetroLube Ltd.</option>
+            <option>Zenith Beverages</option>
+            <option>+ New Customer…</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Product</label>
+          <select class="form-select" id="qProduct" onchange="onQuotationProductChange()" required>
+            <option value="">Select product…</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Category <span class="auto-tag">Auto</span></label>
+          <div class="form-static empty" id="qCategory">—</div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Product Type <span class="auto-tag">Auto</span></label>
+          <div class="form-static empty" id="qType">—</div>
+        </div>
+
+        <div class="form-group span-2">
+          <label class="form-label">Material Structure <span class="auto-tag">Auto</span></label>
+          <div class="form-static empty" id="qStructure">—</div>
+        </div>
+
+        <div class="form-group span-2">
+          <label class="form-label">Required Operations <span class="auto-tag">Auto — from Product Master</span></label>
+          <div class="form-chip-row" id="qOps"><span class="form-note">Select a product to see its workflow</span></div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Quantity</label>
+          <input class="form-input" type="number" placeholder="e.g. 50000" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Unit <span class="auto-tag">Auto</span></label>
+          <div class="form-static empty" id="qUnit">—</div>
+        </div>
+
+        <div class="form-group span-2">
+          <label class="form-label">Reference Material Rate <span class="auto-tag">Auto — from Rates Update</span></label>
+          <div class="form-static empty" id="qRate">—</div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Expected Delivery</label>
+          <input class="form-input" type="date">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Sales Owner</label>
+          <select class="form-select">
+            <option>Admin</option>
+            <option>Priya Sharma</option>
+            <option>Rohit Mehta</option>
+          </select>
+        </div>
+
+        <div class="form-group span-2">
+          <label class="form-label">Notes</label>
+          <textarea class="form-textarea" placeholder="Any special requirements — barrier properties, print colours, delivery instructions…"></textarea>
+        </div>
+      </div>
+
+      <div class="modal-actions" style="margin-top:18px;">
+        <button type="button" class="btn btn-secondary" onclick="closeQuotationModal()">Cancel</button>
+        <button type="submit" class="btn btn-primary">Save as Draft</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="toast" id="toast"><span class="dot"></span><span id="toastMsg">Saved</span></div>
+
 <script src="shell.js"></script>
+<script>
+  const QUOTE_PRODUCTS = {
+    "Bottom Gusset Stand-up Pouch": { cat:"Flexible Packaging", type:"Stand-up Pouch", structure:"PET 12µm + PE 50µm", ops:["Printing","Lamination","Slitting","Pouch Making"], unit:"pcs", rate:"PET ₹210/KG · PE ₹185/KG · Ink ₹640/KG" },
+    "Center Sealed Pouch": { cat:"Flexible Packaging", type:"Center Seal Pouch", structure:"PET 12µm + PE 50µm", ops:["Printing","Lamination","Slitting","Pouch Making"], unit:"pcs", rate:"PET ₹210/KG · PE ₹185/KG · Ink ₹640/KG" },
+    "Three-Side Seal Pouch": { cat:"Flexible Packaging", type:"3-Side Seal Pouch", structure:"PET 12µm + PE 50µm", ops:["Printing","Lamination","Slitting","Pouch Making"], unit:"pcs", rate:"PET ₹210/KG · PE ₹185/KG · Ink ₹640/KG" },
+    "Side Gusset Pouch": { cat:"Flexible Packaging", type:"Side Gusset Pouch", structure:"PET 12µm + PE 50µm", ops:["Printing","Lamination","Slitting","Pouch Making"], unit:"pcs", rate:"PET ₹210/KG · PE ₹185/KG · Ink ₹640/KG" },
+    "Spout Pouch": { cat:"Flexible Packaging", type:"Spout / Shaped Pouch", structure:"PET 12µm + PE 60µm", ops:["Printing","Lamination","Slitting","Pouch Making"], unit:"pcs", rate:"PET ₹210/KG · PE ₹190/KG · Ink ₹640/KG" },
+    "Laminated Packaging Roll": { cat:"Flexible Packaging", type:"Roll Stock", structure:"PET 12µm + PE 50µm", ops:["Printing","Lamination","Slitting"], unit:"KG", rate:"PET ₹210/KG · PE ₹185/KG" },
+    "Lid Laminate": { cat:"Flexible Packaging", type:"Lid Film", structure:"PET 12µm + Foil 7µm", ops:["Printing","Lamination","Slitting"], unit:"KG", rate:"PET ₹210/KG · Foil ₹410/KG" },
+    "Roll-fed Label": { cat:"Labels", type:"Label", structure:"PET 40µm (single layer)", ops:["Printing","Slitting"], unit:"m", rate:"PET ₹230/KG · Ink ₹640/KG" },
+    "Shrink Sleeve": { cat:"Labels", type:"Sleeve", structure:"PVC / PETG 45µm", ops:["Printing","Slitting"], unit:"pcs", rate:"PVC/PETG ₹205/KG · Ink ₹640/KG" },
+    "Stretch Sleeve": { cat:"Labels", type:"Sleeve", structure:"POF 40µm", ops:["Printing","Slitting"], unit:"pcs", rate:"POF ₹198/KG · Ink ₹640/KG" },
+    "Shrink Wrap Film": { cat:"Multilayer & Barrier Films", type:"Wrap Film", structure:"LDPE 60µm", ops:["Slitting"], unit:"KG", rate:"LDPE ₹178/KG" },
+    "Dairy Pouch Film (Roll Stock)": { cat:"Multilayer & Barrier Films", type:"Roll Stock", structure:"PE Multilayer 90µm", ops:["Printing","Lamination","Slitting"], unit:"KG", rate:"PE Multilayer ₹196/KG" },
+    "Garment Polybag": { cat:"General Flexibles", type:"Polybag", structure:"LDPE 50µm", ops:["Slitting","Pouch Making"], unit:"pcs", rate:"LDPE ₹178/KG" },
+    "Industrial Bag": { cat:"General Flexibles", type:"Bag", structure:"PP Woven + PE Liner", ops:["Lamination","Slitting","Pouch Making"], unit:"pcs", rate:"PP Woven ₹165/KG · PE Liner ₹185/KG" }
+  };
+  const ALL_OPS = ["Printing","Lamination","Slitting","Pouch Making"];
+
+  (function populateProductSelect(){
+    const sel = document.getElementById("qProduct");
+    Object.keys(QUOTE_PRODUCTS).forEach(name => {
+      const opt = document.createElement("option");
+      opt.value = name; opt.textContent = name;
+      sel.appendChild(opt);
+    });
+  })();
+
+  function flash(el){ el.classList.remove("auto-fill-flash"); void el.offsetWidth; el.classList.add("auto-fill-flash"); }
+
+  function onQuotationProductChange(){
+    const name = document.getElementById("qProduct").value;
+    const p = QUOTE_PRODUCTS[name];
+    const cat = document.getElementById("qCategory");
+    const type = document.getElementById("qType");
+    const structure = document.getElementById("qStructure");
+    const unit = document.getElementById("qUnit");
+    const rate = document.getElementById("qRate");
+    const opsRow = document.getElementById("qOps");
+    if (!p){
+      [cat,type,structure,unit,rate].forEach(el => { el.textContent = "—"; el.classList.add("empty"); });
+      opsRow.innerHTML = '<span class="form-note">Select a product to see its workflow</span>';
+      return;
+    }
+    cat.textContent = p.cat; cat.classList.remove("empty"); flash(cat);
+    type.textContent = p.type; type.classList.remove("empty"); flash(type);
+    structure.textContent = p.structure; structure.classList.remove("empty"); flash(structure);
+    unit.textContent = p.unit; unit.classList.remove("empty"); flash(unit);
+    rate.textContent = p.rate; rate.classList.remove("empty"); flash(rate);
+    opsRow.innerHTML = ALL_OPS.map(op => {
+      const on = p.ops.includes(op);
+      return `<span class="op-chip${on ? "" : " off"}">${op}</span>`;
+    }).join("");
+    flash(opsRow);
+  }
+
+  function openQuotationModal(){ document.getElementById("quotationModal").classList.add("open"); }
+  function closeQuotationModal(){ document.getElementById("quotationModal").classList.remove("open"); }
+  function submitQuotationModal(e){
+    e.preventDefault();
+    closeQuotationModal();
+    showToast("Quotation draft saved — QT-3054");
+  }
+  function showToast(msg){
+    const t = document.getElementById("toast");
+    document.getElementById("toastMsg").textContent = msg;
+    t.classList.add("show");
+    setTimeout(() => t.classList.remove("show"), 2600);
+  }
+</script>
 </body>
 </html>
