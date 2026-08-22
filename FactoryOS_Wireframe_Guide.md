@@ -1,4 +1,4 @@
-# FactoryOS — Wireframe Walkthrough & Client Pitch Guide
+# Yuva Polyprint — Wireframe Walkthrough & Client Pitch Guide
 
 **For:** Yuva Polyprint (flexible packaging / plastic pouch manufacturer)
 **What this is:** A clickable HTML/CSS prototype of a manufacturing management portal, covering the business end-to-end — from quotation to dispatch. No backend, no real data storage; every screen is populated with realistic sample data so it reads like a working system.
@@ -8,7 +8,7 @@
 
 ## 1. The one-line pitch
 
-FactoryOS replaces the spreadsheets, WhatsApp updates, and paper job cards Yuva Polyprint currently uses to run production, with a single system that tracks a customer order from the moment it's quoted to the moment it's delivered — including which machine, which operator, and how much material was used at every single stage.
+Yuva Polyprint replaces the spreadsheets, WhatsApp updates, and paper job cards Yuva Polyprint currently uses to run production, with a single system that tracks a customer order from the moment it's quoted to the moment it's delivered — including which machine, which operator, and how much material was used at every single stage.
 
 The one idea to lead with in the pitch: **not every product goes through the same process**, and the system already knows that. A roll-fed label skips lamination. A laminated roll skips pouch-making. An industrial bag skips printing. This is configured once in Product Master and every quotation, job card, and cost report automatically follows the right path — you don't have to explain this manually to every customer or operator.
 
@@ -162,7 +162,7 @@ Be upfront about what this prototype is and isn't:
 
 - **It's a clickable design, not a working system.** No login, no database, no real calculations happening behind the buttons — every number is realistic sample data, not live computation.
 - **Forms (New Quotation, New Job, Rates Update save) don't persist data.** They demonstrate the intended interaction and auto-fill logic, not a functioning backend.
-- **This is the basis for the technical proposal** (see `FactoryOS_ERP_Proposal.docx` in this same folder) — the wireframe is what gets scoped and estimated in that document.
+- **This is the basis for the technical proposal** (see `Yuva Polyprint_ERP_Proposal.docx` in this same folder) — the wireframe is what gets scoped and estimated in that document.
 - **Rates auto-fetch via 3rd-party API is explicitly Phase 2** — manual entry is the Phase 1 plan, and the wireframe reflects that honestly rather than over-promising.
 
 ---
